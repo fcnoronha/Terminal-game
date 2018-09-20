@@ -1,7 +1,7 @@
 
 typedef struct{
 	// ??????
-	int oiTrouxa;
+	char desc[100];
 } Elemento;
 
 // Elos da minha HashTable, que formam uma lista linkada
@@ -15,7 +15,7 @@ typedef struct Elo{
 // Hashtable em si
 typedef struct{
 	int tamanho;
-	Elo *Tabela;
+	Elo **Tabela;
 } TabSim;
 
 TabSim *criaS(int);
