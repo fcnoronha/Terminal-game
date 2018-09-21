@@ -22,8 +22,8 @@ TabSim *criaS(int);
 
 void destroiS(TabSim*);
 
-int insereS(TabSim, char*, Elemento*);
+int insereS(TabSim*, char*, Elemento*);
 
-Elemento *buscaS(TabSim, char*);
+Elemento *buscaS(TabSim*, char*);
 
-int retiraS(TabSim, char*);
+int retiraS(TabSim*, char*);
