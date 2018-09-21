@@ -7,7 +7,7 @@
 
 int hashFun(char *n, int tam){
 	// Retorna a chave, valor hash, da string dada.
-	int chave, lst, i = 0;
+	int chave = 0, lst, i = 0;
 	while (n[i] != '\0'){
 		chave += (int)n[i]; // Soma todos valores ASCII
 		lst = n[i];
@@ -19,20 +19,27 @@ int hashFun(char *n, int tam){
 }
 
 TabSim *criaS(int tam){
-	TabSim *t;	// Ponteiro que representara a tabela;
+	TabSim *t = NULL;	// Ponteiro que representara a tabela;
 	t = malloc(sizeof(TabSim));
 
 	t->tamanho = tam;
-	t->Tabela = calloc((size_t)tam, sizeof(Elo)); // Calocc inicializa com NULL
+	t->Tabela = malloc(tam * sizeof(Elo*));
+	for (int i = 0; i < tam; i++){
+		t->Tabela[i] = NULL; // Inicializando valores com NULL
+	}
 
 	return t;
 }
 
 void destroiS(TabSim *t){
+	
+	// Percorre todas as chaves da lista
+	for (int i = 0; i < t->tamanho; i++){
+		free(t->Tabela[i]);
 
-	for (int i = 0; i < t->tamanho; i++){	// Percorre todas as chaves da lista
+		// Isso esta dando meio errado
+		/*
 		Elo *del = t->Tabela[i];
-
 		while (del->prox != NULL){	// Percorre todos os elos daquele valor
 			free(del->valor);
 			// free(del->chave);
@@ -42,86 +49,105 @@ void destroiS(TabSim *t){
 			free(del);
 			del = aux;
 		}
+		free(del);
+		*/
 	}
 	free(t->Tabela);
 	free(t);
 }
 
-int insereS(TabSim t, char *n, Elemento *val){
+int insereS(TabSim *t, char *n, Elemento *val){
 
-	int h = hashFun(n, t.tamanho);
+	int h = hashFun(n, t->tamanho);
 
 	// Criando um Elo com as informaçoes passadas
-	Elo *aux;
+	Elo *aux = malloc(sizeof(Elo));
 	aux->chave = h;
 	aux->valor = val;
 	aux->nome = n;
 	aux->prox = NULL;
 
-	Elo *sec = t.Tabela[h];	// Pego a lista que vai conter todos os elos dql valor
+	// Pego a lista que vai conter todos os elos dql valor
+	Elo *sec = t->Tabela[h];	
 
-	if (sec == NULL){ // Caso ainda nao tenha nenhum elo nql valor
-		sec = aux;
+	// Caso ainda nao tenha nenhum elo nql valor	
+	if (sec == NULL){ 			
+		t->Tabela[h] = aux;
 		return 1; // Inserçao bem sucedida
 	}
 
+	// Percorrendo lista linkada ate chegar no final
 	while (sec->prox != NULL)
 		sec = sec->prox;
 
+	// Adicionando elo no final
 	sec->prox = aux;
 
-	return 1; // Inserçao bem sucedida
+	// Inserçao bem sucedida
+	return 1; 
 }
 
-Elemento *buscaS(TabSim t, char *n){
+Elemento *buscaS(TabSim *t, char *n){
 
-	int h = hashFun(n, t.tamanho);
+	int h = hashFun(n, t->tamanho);
 
-	Elo *sec = t.Tabela[h]; // Pegando a lista linkada dql valor
-
+	Elo *sec = t->Tabela[h]; // Pegando a lista linkada dql valor
 	if (sec == NULL) return NULL; // Caso nao tenha elos com o valor
-
-	while (sec != NULL && strcmp(n, sec->nome) > 0) 
+	
+	while (sec->prox != NULL && strcmp(n, sec->nome) != 0){ 
 		sec = sec->prox; // Compara ate achar na lista encadeada
+	}
 
-	return sec->valor;
+	// Caso eu tenha chegado noq eu quero
+	if (strcmp(n, sec->nome) == 0)
+		return sec->valor;
 
+	return NULL; // Nao achei
 }
 
-int retiraS(TabSim t, char *n){
+int retiraS(TabSim *t, char *n){
 
-	int h = hashFun(n, t.tamanho);
+	int h = hashFun(n, t->tamanho);
 
-	Elo *pr, *ant, *at;
+	// Ponteiros auxiliares, usados para religar elos da lista linkada
+	Elo *proximo, *anterior, *atual;
 
-	at = t.Tabela[h]; // Primeiro elo da lista encadeada daql valor
+	// Primeiro elo da lista encadeada daql valor
+	atual = t->Tabela[h]; 
 
-	if (at == NULL)
+	if (atual == NULL)
 		return 0; // Erro
 
-	if (at != NULL && strcmp(at->nome, n) == 0){
-		t.Tabela[h] = at->prox;
-		free(at->nome);
-		free(at->valor);
-		// free(at->prox);
-		free(at);
+	// Usando a busca para ver se o dado elemento esta na minha lista
+	if (buscaS(t, n) == NULL) return 0;
+
+	// Caso o primeiro elo da lista seja o que deva ser excluido
+	if (atual != NULL && strcmp(atual->nome, n) == 0){
+
+		t->Tabela[h] = atual->prox; 
+		//free(atual->nome); printf("dsjkddakjda\n");
+		//free(atual->valor);
+		//free(atual->prox);
+		free(atual);
 
 		return 1; // Sucesso
 	}
 
-	while (at != NULL && strcmp(at->nome, n) > 0){ // Caso nao seja oq estou procurando
-		ant = at; 
-		at = at->prox;
-		pr = at->prox;
+	// Percorre a lista ate chegar no elo desejado
+	while (atual->prox != NULL && strcmp(atual->nome, n) != 0){ // Caso nao seja oq estou procurando
+		anterior = atual; 
+		atual = atual->prox;
+		proximo = atual->prox;
 	}
 
-	if (strcmp(at->nome, n) == 0){ // Checando se eu achei o coiso
-		free(at->nome);
-		free(at->valor);
-		// free(at->prox);
-		free(at);
+	// Checando se eu achei o coiso
+	if (strcmp(atual->nome, n) == 0){ 
+		free(atual->nome);
+		free(atual->valor);
+		// free(atual->prox);
+		free(atual);
 
-		ant->prox = pr;
+		anterior->prox = proximo; // Religando elo anterior e posterior ao excluido
 
 		return 1; // Sucesso
 	}
