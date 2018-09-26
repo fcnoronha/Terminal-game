@@ -1,9 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include <string.h>
+#include<string.h>
 
-//#include"hashTable.h"
-#include"hashTable.c"
+#include"hashTable.h"
+
+/*
+Maneira de se copilar:
+
+gcc hashTable.c testador3000.c -o testador3000
+
+ou seja, incluir os modulos e dps o testador
+*/
 
 void testaHashTable(){
 
