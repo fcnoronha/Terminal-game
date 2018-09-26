@@ -1,0 +1,5 @@
+Lista cria()
+void destroi(Lista l)
+Lista insere(Lista l, Elemento *val)
+Elemento *busca(Lista l, char *n)
+Elemento *retira(Lista l, Elemento *val)
