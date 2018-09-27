@@ -35,22 +35,19 @@ void destroiS(TabSim *t){
 	
 	// Percorre todas as chaves da lista
 	for (int i = 0; i < t->tamanho; i++){
-		free(t->Tabela[i]);
-
 		// Isso esta dando meio errado
-		/*
+		
 		Elo *del = t->Tabela[i];
-		while (del->prox != NULL){	// Percorre todos os elos daquele valor
-			free(del->valor);
+		while (del != NULL && 0){	// Percorre todos os elos daquele valor
+			// free(del->valor);
 			// free(del->chave);
 			free(del->nome);
-
-			Elo *aux = del->prox;
-			free(del);
-			del = aux;
+			Elo *aux = del;
+			del = del->prox;
+			free(aux);
 		}
-		free(del);
-		*/
+		free(t->Tabela[i]);
+		
 	}
 	free(t->Tabela);
 	free(t);
@@ -128,7 +125,7 @@ int retiraS(TabSim *t, char *n){
 	if (atual != NULL && strcmp(atual->nome, n) == 0){
 
 		t->Tabela[h] = atual->prox; 
-		//free(atual->nome); printf("dsjkddakjda\n");
+		//free(atual->nome);
 		//free(atual->valor);
 		//free(atual->prox);
 		free(atual);
@@ -145,8 +142,8 @@ int retiraS(TabSim *t, char *n){
 
 	// Checando se eu achei o coiso
 	if (strcmp(atual->nome, n) == 0){ 
-		free(atual->nome);
-		free(atual->valor);
+		// free(atual->nome);
+		// free(atual->valor);
 		// free(atual->prox);
 		free(atual);
 

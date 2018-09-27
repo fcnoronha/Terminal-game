@@ -119,7 +119,7 @@ void testaHashTable(){
 	printf("\n");
 
 	destroiS(tabtop);
-
+	printf("Tabela apagada com sucesso!\n");
 
 }
 
@@ -141,6 +141,8 @@ void testaBuscaL(Lista L, *Descricao){
 	else printf("Conseguiu! Descricao: %s\n", busca->desc);  //  é pra retornar o nome? a descrição? o valor? não entendi o enunciado.
 }
 
+
+
 void testaLista(){
 
 	Elemento dirigivel;
@@ -157,7 +159,9 @@ void testaLista(){
 	Lista *aeronavegadores;
 	aeronavegadores = criaL(l);
 
-	/*  Testando a inserção  */
+	// Testando a inserção  
+
+	
 
 	printf("Colocando elementos:\n");
 	printf("Dirigivel: ");
@@ -167,8 +171,7 @@ void testaLista(){
 	printf("Jato: ");
 	testaInsereL(aeronavegadores, jato);
 
-	/*  Testando a busca  */
-
+	// Testando a busca  
 	printf("Buscando elementos:\n");
 	printf("'Voa e pega fogo.': ");
 	testaBuscaL(aeronavegadores, "Voa e pega fogo.");
@@ -179,7 +182,7 @@ void testaLista(){
 	printf("'Serve para planar.': ");
 	testaBuscaL(aeronavegadores, "Serve para planar.");
 
-	/*  Retirando elementos  */
+	// Retirando elementos  
 
 
 
