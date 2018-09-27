@@ -19,7 +19,7 @@ void testaHashTable(){
 
 	Elemento oculos;
 	strcpy(oculos.desc, "Pra te ver melhor");
-	
+
 	Elemento felipe;
 	strcpy(felipe.desc, "Menino lindo que estuda no IME");
 
@@ -55,7 +55,7 @@ void testaHashTable(){
 
 	// Consultando paradas na tabela
 	Elemento *busca = malloc(sizeof(Elemento));
-	
+
 	printf("Busca para 'menino bonito:'\n");
 	busca = buscaS(tabtop, "menino bonito");
 	if (busca == NULL) printf("Deu Errado\n");
@@ -122,6 +122,69 @@ void testaHashTable(){
 
 
 }
+
+/*
+	FUNÇÕES PARA TESTAR A LISTA DE VALORES
+*/
+
+
+void testaInsereL(Lista L, Elemento){
+	if (insereL(L, Elemento) == &Elemento)
+		printf("Inseriu com sucesso!\n");
+	else printf("Inseriu tudo errado!\n");
+}
+
+void testaBuscaL(Lista L, *Descricao){
+	Elemento *busca = malloc(sizeof(Elemento));
+	busca = buscaL(L, Descricao);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else printf("Conseguiu! Descricao: %s\n", busca->desc);  //  é pra retornar o nome? a descrição? o valor? não entendi o enunciado.
+}
+
+void testaLista(){
+
+	Elemento dirigivel;
+	strcpy(dirigivel.desc, "Voa e pega fogo.");
+
+	Elemento helicoptero;
+	strcpy(helicoptero.desc, "Carrega um po branco.");
+
+	Elemento jato;
+	strcpy(jato.desc, "Homenagem a um certo gato.");
+
+	l = 100; // Tamanho da lista de valores
+
+	Lista *aeronavegadores;
+	aeronavegadores = criaL(l);
+
+	/*  Testando a inserção  */
+
+	printf("Colocando elementos:\n");
+	printf("Dirigivel: ");
+	testaInsereL(aeronavegadores, dirigivel);
+	printf("Helicoptero: ");
+	testaInsereL(aeronavegadores, helicoptero);
+	printf("Jato: ");
+	testaInsereL(aeronavegadores, jato);
+
+	/*  Testando a busca  */
+
+	printf("Buscando elementos:\n");
+	printf("'Voa e pega fogo.': ");
+	testaBuscaL(aeronavegadores, "Voa e pega fogo.");
+	printf("'Carrega um po branco.': ");
+	testaBuscaL(aeronavegadores, "Carrega um po branco.");
+	printf("'Homenagem a um certo gato.': ");
+	testaBuscaL(aeronavegadores, "Homenagem a um certo gato.");
+	printf("'Serve para planar.': ");
+	testaBuscaL(aeronavegadores, "Serve para planar.");
+
+	/*  Retirando elementos  */
+
+
+
+}
+
 
 int main(){
 	// Modulo para testas coisas feitas, onde cada modulo vai ser testado por uma void,
