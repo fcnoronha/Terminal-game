@@ -60,6 +60,9 @@ int insereS(TabSim *t, char *n, Elemento *val){
 
 	int h = hashFun(n, t->tamanho);
 
+	// Nao foi possivel inserir pq o elemento ja existe
+	if (buscaS(t, n) != NULL) return 0; 
+
 	// Criando um Elo com as informaçoes passadas
 	Elo *aux = malloc(sizeof(Elo));
 	aux->chave = h;
