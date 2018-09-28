@@ -1,6 +1,5 @@
 
 typedef struct{
-	// ??????
 	char desc[100];
 } Elemento;
 
@@ -13,7 +12,7 @@ typedef struct EloL{
 // Hashtable em si
 typedef struct{
 	int tamanho;
-	Elo **Lista;
+	EloL *Lista;
 } Lista;
 
 
