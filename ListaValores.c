@@ -17,9 +17,20 @@ Lista criaL(int tam)
 
 void destroiL(Lista l)
 {
+	
+	EloL atual;
+
+	atual->prox = l->Lista
+
+	while(atual->prox!= NULL)
+	{
+		free(atual->valor);
+		free(atual->prox);
+
+		atual = atual->prox;
+	}
+
 	free(l->tam);
-	free(l->Lista->valor);
-	free(l->Lista->prox);
 	free(l->Lista);
 	free(l);
 }
