@@ -7,9 +7,7 @@
 /*
 Maneira de se copilar:
 
-gcc hashTable.c testador3000.c -o testador3000
-
-ou seja, incluir os modulos e dps o testador
+make all
 */
 
 void testaHashTable(){

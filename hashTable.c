@@ -4,7 +4,6 @@
 
 #include"hashTable.h" // Usando meu cabeçalho
 
-
 int hashFun(char *n, int tam){
 	// Retorna a chave, valor hash, da string dada.
 	int chave = 0, lst, i = 0;
@@ -35,7 +34,6 @@ void destroiS(TabSim *t){
 	
 	// Percorre todas as chaves da lista
 	for (int i = 0; i < t->tamanho; i++){
-		// Isso esta dando meio errado
 		
 		Elo *del = t->Tabela[i];
 		while (del != NULL && 0){	// Percorre todos os elos daquele valor
@@ -46,8 +44,7 @@ void destroiS(TabSim *t){
 			del = del->prox;
 			free(aux);
 		}
-		free(t->Tabela[i]);
-		
+		free(t->Tabela[i]);		
 	}
 	free(t->Tabela);
 	free(t);
