@@ -6,7 +6,7 @@
 
 Lista criaL()
 {
-	Lista *l = NULL; /* ponteiro pra lista */
+	Lista l = NULL; /* ponteiro pra lista */
 	l = malloc(sizeof(Lista));
 	l->tamanho=0;
 
@@ -16,16 +16,18 @@ Lista criaL()
 void destroiL(Lista l)
 {
 	
-	EloL atual;
+	EloL atual, aux;
 
-	atual->prox = l->Lista;
+	atual = l->Lista;
 
 	while(atual->prox!= NULL)
 	{
-		atual = atual->prox;
+		aux = atual->prox;
 
 		free(atual->valor);
 		free(atual->prox);
+
+		atual=aux;
 
 	}
 
@@ -39,12 +41,12 @@ Elemento * insereL(Lista l, Elemento *val);
 {
 
 	/* cria EloL */
-	EloL *aux = malloc(sizeof(EloL));
-	EloL *atual = l->Lista;
+	EloL aux = malloc(sizeof(EloL));
+	EloL atual = l->Lista;
 	aux->valor = val;
 	aux->prox = NULL;
 
-	if (buscaL(l, val) != NULL) return 0; 
+	if (buscaL(l, val) != NULL) return NULL; 
 
 	while ( atual != NULL && atual->prox != NULL) 
 	{
@@ -53,37 +55,37 @@ Elemento * insereL(Lista l, Elemento *val);
 
 	l->tam++;
 	atual->prox = aux;
-	return aux;
+	return &aux;
 
 }
 
 EloL *buscaL(Lista l, Elemento *val)
 {
-	EloL *atual = l->Lista;
+	EloL atual = l->Lista;
 	while(atual->prox != NULL)
 	{
 		if (atual->val == val)
-			return atual;
+			return &atual;
 		atual = atual->prox;
 	}
 
 	if (atual->val == val)
-			return atual;
+			return &atual;
 	return NULL;
 }
 
 Elemento *retiraL(Lista l, Elemento *val)
 {
-	EloL *atual = buscaL(l, val);
-	EloL *anterior = l->Lista;
+	EloL atual = buscaL(l, val);
+	EloL anterior = l->Lista;
+
+	if(!atual) return NULL;
 
 	while(anterior->prox != atual)
 		anterior=anterior->prox;
 
 	anterior->prox=atual->prox;
 
-	free(atual->valor);
-	free(atual->prox);
-	free(atual);
+	return &(atual->valor);
 
 }
