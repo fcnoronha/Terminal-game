@@ -20,9 +20,12 @@ int hashFun(char *n, int tam){
 TabSim *criaS(int tam){
 	TabSim *t = NULL;	// Ponteiro que representara a tabela;
 	t = malloc(sizeof(TabSim));
+	if (t == NULL) return NULL; // Erro
 
 	t->tamanho = tam;
 	t->Tabela = malloc(tam * sizeof(Elo*));
+	if (t->Tabela == NULL) return NULL // Erro
+
 	for (int i = 0; i < tam; i++){
 		t->Tabela[i] = NULL; // Inicializando valores com NULL
 	}
