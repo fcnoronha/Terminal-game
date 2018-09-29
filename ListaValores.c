@@ -26,7 +26,7 @@ void destroiL(Lista *l)
 		aux = atual->prox;
 
 		free(atual->valor);
-		free(atual->prox);
+		free(atual);
 
 		atual=aux;
 
