@@ -18,10 +18,10 @@ typedef struct{
 
 Lista criaL(int tam);
 
-void destroiL(Lista l);
+void destroiL(Lista *l);
 
-Elemento * insereL(Lista l, Elemento *val);
+Elemento * insereL(Lista *l, Elemento *val);
 
-Elemento * buscaL(Lista l, char *n);
+Elemento * buscaL(Lista *l, Elemento *val);
 
-Elemento * retiraL(Lista l, Elemento *val);
+Elemento * retiraL(Lista *l, Elemento *val);

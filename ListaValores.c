@@ -6,17 +6,17 @@
 
 Lista criaL()
 {
-	Lista l = NULL; /* ponteiro pra lista */
+	Lista *l = NULL; /* ponteiro pra lista */
 	l = malloc(sizeof(Lista));
 	l->tamanho=0;
 
-	return l;
+	return *l;
 }
 
-void destroiL(Lista l)
+void destroiL(Lista *l)
 {
 	
-	EloL atual, aux;
+	EloL *atual, *aux;
 
 	atual = l->Lista;
 
@@ -31,18 +31,17 @@ void destroiL(Lista l)
 
 	}
 
-	free(l->tam);
 	free(l->Lista);
 	free(l);
 }
 
 
-Elemento * insereL(Lista l, Elemento *val);
+Elemento * insereL(Lista *l, Elemento *val)
 {
 
 	/* cria EloL */
-	EloL aux = malloc(sizeof(EloL));
-	EloL atual = l->Lista;
+	EloL *aux = malloc(sizeof(EloL));
+	EloL *atual = l->Lista;
 	aux->valor = val;
 	aux->prox = NULL;
 
@@ -53,31 +52,32 @@ Elemento * insereL(Lista l, Elemento *val);
 		atual = atual->prox;
 	}
 
-	l->tam++;
+	l->tamanho++;
 	atual->prox = aux;
-	return &aux;
+	return aux->valor;
 
 }
 
-EloL *buscaL(Lista l, Elemento *val)
+Elemento *buscaL(Lista *l, Elemento *val)
 {
-	EloL atual = l->Lista;
+	EloL *atual = l->Lista;
 	while(atual->prox != NULL)
 	{
-		if (atual->val == val)
-			return &atual;
+		if (atual->valor == val)
+			return atual->valor;
 		atual = atual->prox;
 	}
 
-	if (atual->val == val)
-			return &atual;
+	if (atual->valor == val)
+			return atual->valor;
 	return NULL;
 }
 
-Elemento *retiraL(Lista l, Elemento *val)
+Elemento *retiraL(Lista *l, Elemento *val)
 {
-	EloL atual = buscaL(l, val);
-	EloL anterior = l->Lista;
+	EloL *atual;
+	EloL *anterior = l->Lista;
+	Elemento *valor = buscaL(l, val);
 
 	if(!atual) return NULL;
 
@@ -86,6 +86,6 @@ Elemento *retiraL(Lista l, Elemento *val)
 
 	anterior->prox=atual->prox;
 
-	return &(atual->valor);
+	return (atual->valor);
 
 }
