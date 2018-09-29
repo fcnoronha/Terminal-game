@@ -16,7 +16,7 @@ typedef struct{
 } Lista;
 
 
-Lista criaL(int tam);
+Lista * criaL(int tam);
 
 void destroiL(Lista *l);
 

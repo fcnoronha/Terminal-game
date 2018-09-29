@@ -4,13 +4,14 @@
 
 #include"ListaValores.h" // Usando meu cabeçalho
 
-Lista criaL()
+Lista *criaL()
 {
 	Lista *l = NULL; /* ponteiro pra lista */
 	l = malloc(sizeof(Lista));
+	if (l == NULL) return NULL;
 	l->tamanho=0;
 
-	return *l;
+	return l;
 }
 
 void destroiL(Lista *l)
