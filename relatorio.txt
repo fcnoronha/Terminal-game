@@ -1,0 +1,16 @@
+Felipe Castro de Noronha - 10737032
+Bruna Bazaluk M Videira - 9797002
+
+    Hash Table - Tabela de Simbolos
+
+A tabela de simbolos esta implementada no arquivo hashTable.c, junto com o cabeçalho hashTable.h (onde todas as funçoes e structs sao prototipadas). Sua funçao e associar um termo com um elemento, de tal forma, que a busca possa ser feita de maneira rapida e eficiente. Para isso, para cada termo e difinido um valor hash, todavia, esse valor pode se repitir entre termos, de maneira a evitar este problema, e criada uma lista linkada para cada valor hash, o que, mesmo criando mais espaço, continua a dar eficiencia ao processo de busca. Agora, vamos passar funçao por funçao, explicando seu respectivo funcionamento:
+
+- int hashFun(char *n, int tam): recebe um termo e seu respetivo tamanho,
+retornando assim o seu valor hash, que e calculado como sendo a soma dos valores ASCII de cada letra, devidido pelo valor do ultimo caractere;
+- TabSim *criaS(int tam): cria uma tabela hash com o tamanho passado como parametro. Retorna NULL caso tenha ocorrido algum erro na alocaçao de memoria;
+- void destroiS(TabSim *t): recebe o ponteiro para uma tabela de simbolos e a destroi, liberando assim, espaço na memoria;
+- int insereS(TabSim *t, char *n, Elemento *val): funçao que recebe uma tabela, e insere nesta um termo n, que por sua vez, e assossiado a um elemento val. Representa o cerne da hashTable. Retornando 1 caso a inserçao seja bem sucessida e 0 caso contrario;
+- Elemento *buscaS(TabSim *t, char *n): funçao que busca um termo n na tabela e retorna o Elemento a ele associado. Retorna NULL caso a busca nao tenha sido bem sucedida;
+- int retiraS(TabSim *t, char *n): funçao que recebe um termo n e o retira na tabela, tomando cuidado com a estrutura da lista linkada, religando 'nos' separados. Retorna 0 caso nao consiga retirar o dado elemento e 1 caso o processo seja bem sucessido.
+
+Para testar a hashTable foi criada a void testaHashTable(), que simula cada funçao e testa casos onde erros seriam esperados, fazendo com que seja possivel verificar a eficacia das funçoes em relaçao a comunicaçao de erros e sucessos. Ademais, ate agora, nao foi encontrado nenhum cenario de erro nao tratado nas funçoes que fazem parte do conjunto da hashTable.
