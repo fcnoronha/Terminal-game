@@ -46,7 +46,7 @@ Elemento * insereL(Lista *l, Elemento *val)
 	aux->valor = val;
 	aux->prox = NULL;
 
-	if (buscaL(l, val) != NULL) return NULL; 
+	if (buscaL(l, val) != NULL) return val; 
 
 	while ( atual != NULL && atual->prox != NULL) 
 	{
@@ -59,12 +59,12 @@ Elemento * insereL(Lista *l, Elemento *val)
 
 }
 
-Elemento *buscaL(Lista *l, Elemento *val)
+Elemento *buscaL(Lista *l, char *n)
 {
 	EloL *atual = l->Lista;
 	while(atual->prox != NULL)
 	{
-		if (atual->valor == val)
+		if (!strcmp(atual->valor->desc, n))
 			return atual->valor;
 		atual = atual->prox;
 	}
@@ -80,9 +80,11 @@ Elemento *retiraL(Lista *l, Elemento *val)
 	EloL *anterior = l->Lista;
 	Elemento *valor = buscaL(l, val);
 
-	if(!atual) return NULL;
+	atual=anterior->prox;
 
-	while(anterior->prox != atual)
+	if(valor == NULL) return NULL;
+
+	while(anterior->valor != val)
 		anterior=anterior->prox;
 
 	anterior->prox=atual->prox;
