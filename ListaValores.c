@@ -50,7 +50,6 @@ Elemento * insereL(Lista *l, Elemento *val)
 	if (atual == NULL)
 	{
 		l->tamanho++;
-		l->Lista = val;
 		l->Lista->prox = NULL;
 		return val;
 	}
