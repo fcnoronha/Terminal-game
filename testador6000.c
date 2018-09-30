@@ -18,7 +18,7 @@
 
 void testaBuscaL(Lista *L, Elemento el){  //tá errada acho viu
 	Elemento *busca;
-	busca = buscaL(L, &el);
+	busca = buscaL(L, el.desc);
 	if (busca == NULL) printf("Elemento não encontrado.\n");
 	else if (busca == &el) printf("Achou!\n");
 }

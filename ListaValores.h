@@ -9,7 +9,7 @@ typedef struct EloL{
 	struct EloL *prox;
 } EloL;
 
-	
+
 // Aponta pro primeiro elemento da lista
 typedef struct{
 	int tamanho;
