@@ -8,27 +8,36 @@ Lista *criaL()
 {
 	Lista *l = NULL; /* ponteiro pra lista */
 	l = malloc(sizeof(Lista));
+<<<<<<< HEAD
 	if (l == NULL) return NULL; /* checando alocacao */
 	l->tamanho=0;
+=======
+	if (l == NULL) return NULL;
+	l->tamanho = 0;
+>>>>>>> refs/remotes/origin/master
 
 	return l;
 }
 
 void destroiL(Lista *l)
 {
-	
+
 	EloL *atual, *aux;
 
 	atual = l->Lista; /* atual recebe primeiro elemento */
 
+<<<<<<< HEAD
 	while(atual->prox!= NULL) /* percorre a lista ate o final */
+=======
+	while(atual->prox != NULL)
+>>>>>>> refs/remotes/origin/master
 	{
 		aux = atual->prox;
 
 		free(atual->valor);
 		free(atual);
 
-		atual=aux;
+		atual = aux;
 
 	}
 
@@ -46,9 +55,19 @@ Elemento * insereL(Lista *l, Elemento *val)
 	aux->valor = val;
 	aux->prox = NULL;
 
+<<<<<<< HEAD
 	if (buscaL(l, val) != NULL) return val; /* se o elemento ja estiver na lista ele mesmo eh retornado */
 
 	while ( atual != NULL && atual->prox != NULL)  /* percorre a lista ate o final */
+=======
+<<<<<<< HEAD
+	if (buscaL(l, val) != NULL) return NULL;
+=======
+	if (buscaL(l, val) != NULL) return val; 
+>>>>>>> b1850844484d50ed25344b9ff7be741a902c161d
+
+	while (atual != NULL && atual->prox != NULL)
+>>>>>>> refs/remotes/origin/master
 	{
 		atual = atual->prox;
 	}
@@ -82,13 +101,21 @@ Elemento *retiraL(Lista *l, Elemento *val)
 
 	atual=anterior->prox;
 
+<<<<<<< HEAD
+	while(anterior->prox != atual)
+		anterior = anterior->prox;
+=======
 	if(valor == NULL) return NULL;
 
 	while(anterior->valor != val)
 		anterior=anterior->prox;
+<<<<<<< HEAD
 		atual=atual->prox;
+=======
+>>>>>>> b1850844484d50ed25344b9ff7be741a902c161d
+>>>>>>> refs/remotes/origin/master
 
-	anterior->prox=atual->prox;
+	anterior->prox = atual->prox;
 
 	return (atual->valor);
 
