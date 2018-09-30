@@ -8,7 +8,7 @@ Lista *criaL()
 {
 	Lista *l = NULL; /* ponteiro pra lista */
 	l = malloc(sizeof(Lista));
-	if (l == NULL) return NULL;
+	if (l == NULL) return NULL; /* checando alocacao */
 	l->tamanho=0;
 
 	return l;
@@ -19,9 +19,9 @@ void destroiL(Lista *l)
 	
 	EloL *atual, *aux;
 
-	atual = l->Lista;
+	atual = l->Lista; /* atual recebe primeiro elemento */
 
-	while(atual->prox!= NULL)
+	while(atual->prox!= NULL) /* percorre a lista ate o final */
 	{
 		aux = atual->prox;
 
@@ -46,15 +46,15 @@ Elemento * insereL(Lista *l, Elemento *val)
 	aux->valor = val;
 	aux->prox = NULL;
 
-	if (buscaL(l, val) != NULL) return val; 
+	if (buscaL(l, val) != NULL) return val; /* se o elemento ja estiver na lista ele mesmo eh retornado */
 
-	while ( atual != NULL && atual->prox != NULL) 
+	while ( atual != NULL && atual->prox != NULL)  /* percorre a lista ate o final */
 	{
 		atual = atual->prox;
 	}
 
-	l->tamanho++;
-	atual->prox = aux;
+	l->tamanho++; /* atualiza tamanho da lista */
+	atual->prox = aux; /* insere novo elo */
 	return aux->valor;
 
 }
@@ -69,7 +69,7 @@ Elemento *buscaL(Lista *l, char *n)
 		atual = atual->prox;
 	}
 
-	if (atual->valor == val)
+	if (!strcmp(atual->valor->desc, n))
 			return atual->valor;
 	return NULL;
 }
@@ -86,6 +86,7 @@ Elemento *retiraL(Lista *l, Elemento *val)
 
 	while(anterior->valor != val)
 		anterior=anterior->prox;
+		atual=atual->prox;
 
 	anterior->prox=atual->prox;
 
