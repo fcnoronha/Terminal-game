@@ -8,8 +8,13 @@ Lista *criaL()
 {
 	Lista *l = NULL; /* ponteiro pra lista */
 	l = malloc(sizeof(Lista));
+<<<<<<< HEAD
+	if (l == NULL) return NULL; /* checando alocacao */
+	l->tamanho=0;
+=======
 	if (l == NULL) return NULL;
 	l->tamanho = 0;
+>>>>>>> refs/remotes/origin/master
 
 	return l;
 }
@@ -19,9 +24,13 @@ void destroiL(Lista *l)
 
 	EloL *atual, *aux;
 
-	atual = l->Lista;
+	atual = l->Lista; /* atual recebe primeiro elemento */
 
+<<<<<<< HEAD
+	while(atual->prox!= NULL) /* percorre a lista ate o final */
+=======
 	while(atual->prox != NULL)
+>>>>>>> refs/remotes/origin/master
 	{
 		aux = atual->prox;
 
@@ -46,15 +55,29 @@ Elemento * insereL(Lista *l, Elemento *val)
 	aux->valor = val;
 	aux->prox = NULL;
 
+<<<<<<< HEAD
 	if (buscaL(l, val) != NULL) return val;
+=======
+<<<<<<< HEAD
+	if (buscaL(l, val) != NULL) return val; /* se o elemento ja estiver na lista ele mesmo eh retornado */
+
+	while ( atual != NULL && atual->prox != NULL)  /* percorre a lista ate o final */
+=======
+<<<<<<< HEAD
+	if (buscaL(l, val) != NULL) return NULL;
+=======
+	if (buscaL(l, val) != NULL) return val; 
+>>>>>>> b1850844484d50ed25344b9ff7be741a902c161d
+>>>>>>> f7e3cc49ab3ed0a08c885547b357f620e1ae668f
 
 	while (atual != NULL && atual->prox != NULL)
+>>>>>>> refs/remotes/origin/master
 	{
 		atual = atual->prox;
 	}
 
-	l->tamanho++;
-	atual->prox = aux;
+	l->tamanho++; /* atualiza tamanho da lista */
+	atual->prox = aux; /* insere novo elo */
 	return aux->valor;
 
 }
@@ -69,7 +92,7 @@ Elemento *buscaL(Lista *l, char *n)
 		atual = atual->prox;
 	}
 
-	if (atual->valor == val)
+	if (!strcmp(atual->valor->desc, n))
 			return atual->valor;
 	return NULL;
 }
@@ -86,6 +109,14 @@ Elemento *retiraL(Lista *l, Elemento *val)
 
 	while(anterior->valor != val)
 		anterior=anterior->prox;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		atual=atual->prox;
+=======
+>>>>>>> b1850844484d50ed25344b9ff7be741a902c161d
+>>>>>>> refs/remotes/origin/master
+>>>>>>> f7e3cc49ab3ed0a08c885547b357f620e1ae668f
 
 	anterior->prox = atual->prox;
 
