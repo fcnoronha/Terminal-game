@@ -49,8 +49,11 @@ Elemento * insereL(Lista *l, Elemento *val)
 	EloL *atual = l->Lista;
 	if (atual == NULL)
 	{
+		EloL aux2;
+		aux2.valor = val;
+		aux2.prox = NULL;
 		l->tamanho++;
-		l->Lista->prox = NULL;
+		l->Lista = &aux2;
 		return val;
 	}
 	aux->valor = val;
@@ -70,25 +73,19 @@ Elemento * insereL(Lista *l, Elemento *val)
 
 Elemento *buscaL(Lista *l, char *n)
 {
-	printf("OI1\n");
 	EloL *atual = l->Lista;
-	printf("OI2\n");
 	while(atual->prox != NULL) /* percorre a lista ate o final */
 	{
-		printf("%s\n", n);
-		printf("%s\n", atual->valor->desc);
 		if (strcmp(atual->valor->desc, n) == 0) /* compara elemento com n */
 			{
-			printf("OI4\n");
 			return atual->valor;
 		}
-		printf("OI5\n");
 		atual = atual->prox;
 	}
-
-	printf("OI6\n");
 	if (strcmp(atual->valor->desc, n) == 0) /* checa se nao estava no ultimo */
-			return atual->valor;
+	{
+		return atual->valor;
+	}
 	return NULL;
 }
 
@@ -109,6 +106,7 @@ Elemento *retiraL(Lista *l, Elemento *val)
 	}
 
 	anterior->prox = atual->prox; /* atualiza os elos */
+	printf("olha aqui gus\n");
 
 	return (atual->valor);
 

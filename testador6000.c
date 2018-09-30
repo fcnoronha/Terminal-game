@@ -2,34 +2,9 @@
 #include<stdlib.h>
 #include<string.h>
 
-#include"ListaValores.c"
+#include"ListaValores.h"
 
 
-/*
-	FUNÇÕES PARA TESTAR A LISTA DE VALORES
-*/
-
-
-// void testaInsereL(Lista *L, Elemento el){
-// 	if (insereL(L, &el) == &el)
-// 		printf("Inseriu com sucesso!\n");
-// 	else printf("Inseriu tudo errado!\n");
-// }
-
-void testaBuscaL(Lista *L, Elemento el){  //tá errada acho viu
-	Elemento *busca;
-	busca = buscaL(L, el.desc);
-	if (busca == NULL) printf("Elemento não encontrado.\n");
-	else if (busca == &el) printf("Achou!\n");
-}
-
-void testaRetiraL(Lista *L, Elemento el){
-	printf("Busca antes de retirar: ");
-	testaBuscaL(L, el);
-	retiraL(L, &el);
-	printf("Busca depois de retirar: ");
-	testaBuscaL(L, el);
-}
 
 void testaLista(){
 
@@ -53,7 +28,7 @@ void testaLista(){
 
 	// Testando a inserção
 
-	printf("Colocando elementos:\n");
+	printf("\nColocando elementos:\n");
 
 	printf("Dirigivel: ");
     if (insereL(aeronavegadores, &dirigivel) == &dirigivel)
@@ -70,34 +45,82 @@ void testaLista(){
         printf("inseriu com sucesso!\n");
     else printf("inseriu tudo errado!\n");
 
-    printf("%s\n", aeronavegadores->Lista->valor->desc);
+    printf("----\n");
+    
 	// Testando a busca
 
+    Elemento *busca;
 	printf("Buscando elementos:\n");
-	printf("'Voa e pega fogo.': \n");
-	testaBuscaL(aeronavegadores, dirigivel);
 
-	printf("'Carrega um po branco.': \n");
-	testaBuscaL(aeronavegadores, helicoptero);
+	printf("'Voa e pega fogo.': ");
+	busca = buscaL(aeronavegadores, dirigivel.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &dirigivel) printf("Achou!\n");
 
-	printf("'Homenagem a um certo gato.': \n");
-	testaBuscaL(aeronavegadores, jato);
+	printf("'Carrega um po branco.': ");
+	busca = buscaL(aeronavegadores, helicoptero.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &helicoptero) printf("Achou!\n");
 
-	printf("'Serve para planar.': \n");
-	testaBuscaL(aeronavegadores, planador);
+	printf("'Homenagem a um certo gato.': ");
+	busca = buscaL(aeronavegadores, jato.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &jato) printf("Achou!\n");
 
+	printf("'Serve para planar.': ");
+	busca = buscaL(aeronavegadores, planador.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &planador) printf("Achou!\n");
+
+    printf("----\n");
 
 	// Retirando elementos
 
 	printf("Retirando elementos:\n");
+
 	printf("Dirigivel: \n");
-	testaRetiraL(aeronavegadores, dirigivel);
+    printf("Busca antes de retirar: ");
+    busca = buscaL(aeronavegadores, dirigivel.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &dirigivel) printf("Achou!\n");
+	retiraL(aeronavegadores, &dirigivel);
+	printf("Busca depois de retirar: ");
+    busca = buscaL(aeronavegadores, dirigivel.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &dirigivel) printf("Achou!\n");
+
 	printf("Helicoptero: \n");
-	testaRetiraL(aeronavegadores, helicoptero);
+    printf("Busca antes de retirar: ");
+    busca = buscaL(aeronavegadores, helicoptero.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &helicoptero) printf("Achou!\n");
+	retiraL(aeronavegadores, &helicoptero);
+	printf("Busca depois de retirar: ");
+    busca = buscaL(aeronavegadores, helicoptero.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &helicoptero) printf("Achou!\n");
+
 	printf("Jato: \n");
-	testaRetiraL(aeronavegadores, jato);
+    printf("Busca antes de retirar: ");
+    busca = buscaL(aeronavegadores, jato.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &jato) printf("Achou!\n");
+	retiraL(aeronavegadores, &jato);
+	printf("Busca depois de retirar: ");
+    busca = buscaL(aeronavegadores, jato.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &jato) printf("Achou!\n");
+
 	printf("Planador: \n");
-	testaRetiraL(aeronavegadores, planador);
+    printf("Busca antes de retirar: ");
+    busca = buscaL(aeronavegadores, planador.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &planador) printf("Achou!\n");
+	retiraL(aeronavegadores, &planador);
+	printf("Busca depois de retirar: ");
+    busca = buscaL(aeronavegadores, planador.desc);
+	if (busca == NULL) printf("Elemento não encontrado.\n");
+	else if (busca == &planador) printf("Achou!\n");
 
 
 
