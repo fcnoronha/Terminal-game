@@ -8,7 +8,7 @@ typedef struct EloL{
 	Elemento *valor; // a ser definido
 	struct EloL *prox;
 } EloL;
-	
+
 // Hashtable em si
 typedef struct{
 	int tamanho;
@@ -16,7 +16,7 @@ typedef struct{
 } Lista;
 
 
-Lista * criaL(int tam);
+Lista * criaL();
 
 void destroiL(Lista *l);
 

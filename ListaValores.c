@@ -9,26 +9,26 @@ Lista *criaL()
 	Lista *l = NULL; /* ponteiro pra lista */
 	l = malloc(sizeof(Lista));
 	if (l == NULL) return NULL;
-	l->tamanho=0;
+	l->tamanho = 0;
 
 	return l;
 }
 
 void destroiL(Lista *l)
 {
-	
+
 	EloL *atual, *aux;
 
 	atual = l->Lista;
 
-	while(atual->prox!= NULL)
+	while(atual->prox != NULL)
 	{
 		aux = atual->prox;
 
 		free(atual->valor);
 		free(atual);
 
-		atual=aux;
+		atual = aux;
 
 	}
 
@@ -46,9 +46,9 @@ Elemento * insereL(Lista *l, Elemento *val)
 	aux->valor = val;
 	aux->prox = NULL;
 
-	if (buscaL(l, val) != NULL) return NULL; 
+	if (buscaL(l, val) != NULL) return NULL;
 
-	while ( atual != NULL && atual->prox != NULL) 
+	while (atual != NULL && atual->prox != NULL)
 	{
 		atual = atual->prox;
 	}
@@ -83,9 +83,9 @@ Elemento *retiraL(Lista *l, Elemento *val)
 	if(!atual) return NULL;
 
 	while(anterior->prox != atual)
-		anterior=anterior->prox;
+		anterior = anterior->prox;
 
-	anterior->prox=atual->prox;
+	anterior->prox = atual->prox;
 
 	return (atual->valor);
 

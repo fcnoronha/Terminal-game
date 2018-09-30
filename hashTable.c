@@ -24,7 +24,7 @@ TabSim *criaS(int tam){
 
 	t->tamanho = tam;
 	t->Tabela = malloc(tam * sizeof(Elo*));
-	if (t->Tabela == NULL) return NULL // Erro
+	if (t->Tabela == NULL) return NULL; // Erro
 
 	for (int i = 0; i < tam; i++){
 		t->Tabela[i] = NULL; // Inicializando valores com NULL
@@ -34,10 +34,10 @@ TabSim *criaS(int tam){
 }
 
 void destroiS(TabSim *t){
-	
+
 	// Percorre todas as chaves da lista
 	for (int i = 0; i < t->tamanho; i++){
-		
+
 		Elo *del = t->Tabela[i];
 		while (del != NULL && 0){	// Percorre todos os elos daquele valor
 			// free(del->valor);
@@ -47,7 +47,7 @@ void destroiS(TabSim *t){
 			del = del->prox;
 			free(aux);
 		}
-		free(t->Tabela[i]);		
+		free(t->Tabela[i]);
 	}
 	free(t->Tabela);
 	free(t);
@@ -58,7 +58,7 @@ int insereS(TabSim *t, char *n, Elemento *val){
 	int h = hashFun(n, t->tamanho);
 
 	// Nao foi possivel inserir pq o elemento ja existe
-	if (buscaS(t, n) != NULL) return 0; 
+	if (buscaS(t, n) != NULL) return 0;
 
 	// Criando um Elo com as informaçoes passadas
 	Elo *aux = malloc(sizeof(Elo));
@@ -68,10 +68,10 @@ int insereS(TabSim *t, char *n, Elemento *val){
 	aux->prox = NULL;
 
 	// Pego a lista que vai conter todos os elos dql valor
-	Elo *sec = t->Tabela[h];	
+	Elo *sec = t->Tabela[h];
 
-	// Caso ainda nao tenha nenhum elo nql valor	
-	if (sec == NULL){ 			
+	// Caso ainda nao tenha nenhum elo nql valor
+	if (sec == NULL){
 		t->Tabela[h] = aux;
 		return 1; // Inserçao bem sucedida
 	}
@@ -84,7 +84,7 @@ int insereS(TabSim *t, char *n, Elemento *val){
 	sec->prox = aux;
 
 	// Inserçao bem sucedida
-	return 1; 
+	return 1;
 }
 
 Elemento *buscaS(TabSim *t, char *n){
@@ -93,8 +93,8 @@ Elemento *buscaS(TabSim *t, char *n){
 
 	Elo *sec = t->Tabela[h]; // Pegando a lista linkada dql valor
 	if (sec == NULL) return NULL; // Caso nao tenha elos com o valor
-	
-	while (sec->prox != NULL && strcmp(n, sec->nome) != 0){ 
+
+	while (sec->prox != NULL && strcmp(n, sec->nome) != 0){
 		sec = sec->prox; // Compara ate achar na lista encadeada
 	}
 
@@ -113,7 +113,7 @@ int retiraS(TabSim *t, char *n){
 	Elo *proximo, *anterior, *atual;
 
 	// Primeiro elo da lista encadeada daql valor
-	atual = t->Tabela[h]; 
+	atual = t->Tabela[h];
 
 	if (atual == NULL)
 		return 0; // Erro
@@ -124,7 +124,7 @@ int retiraS(TabSim *t, char *n){
 	// Caso o primeiro elo da lista seja o que deva ser excluido
 	if (atual != NULL && strcmp(atual->nome, n) == 0){
 
-		t->Tabela[h] = atual->prox; 
+		t->Tabela[h] = atual->prox;
 		//free(atual->nome);
 		//free(atual->valor);
 		//free(atual->prox);
@@ -135,13 +135,13 @@ int retiraS(TabSim *t, char *n){
 
 	// Percorre a lista ate chegar no elo desejado
 	while (atual->prox != NULL && strcmp(atual->nome, n) != 0){ // Caso nao seja oq estou procurando
-		anterior = atual; 
+		anterior = atual;
 		atual = atual->prox;
 		proximo = atual->prox;
 	}
 
 	// Checando se eu achei o coiso
-	if (strcmp(atual->nome, n) == 0){ 
+	if (strcmp(atual->nome, n) == 0){
 		// free(atual->nome);
 		// free(atual->valor);
 		// free(atual->prox);
