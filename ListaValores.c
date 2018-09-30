@@ -46,11 +46,7 @@ Elemento * insereL(Lista *l, Elemento *val)
 	aux->valor = val;
 	aux->prox = NULL;
 
-<<<<<<< HEAD
-	if (buscaL(l, val) != NULL) return NULL;
-=======
-	if (buscaL(l, val) != NULL) return val; 
->>>>>>> b1850844484d50ed25344b9ff7be741a902c161d
+	if (buscaL(l, val) != NULL) return val;
 
 	while (atual != NULL && atual->prox != NULL)
 	{
@@ -86,15 +82,10 @@ Elemento *retiraL(Lista *l, Elemento *val)
 
 	atual=anterior->prox;
 
-<<<<<<< HEAD
-	while(anterior->prox != atual)
-		anterior = anterior->prox;
-=======
 	if(valor == NULL) return NULL;
 
 	while(anterior->valor != val)
 		anterior=anterior->prox;
->>>>>>> b1850844484d50ed25344b9ff7be741a902c161d
 
 	anterior->prox = atual->prox;
 
