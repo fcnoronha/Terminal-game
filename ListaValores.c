@@ -48,7 +48,7 @@ Elemento * insereL(Lista *l, Elemento *val)
 	aux->valor = val;
 	aux->prox = NULL;
 
-	if (buscaL(l, val) != NULL) return val; /* se o elemento ja estiver na lista ele mesmo eh retornado */
+	if (buscaL(l, val->desc) != NULL) return val; /* se o elemento ja estiver na lista ele mesmo eh retornado */
 
 	while ( atual != NULL && atual->prox != NULL)  /* percorre a lista ate o final */
 	{
@@ -80,7 +80,7 @@ Elemento *retiraL(Lista *l, Elemento *val)
 {
 	EloL *atual;
 	EloL *anterior = l->Lista;
-	Elemento *valor = buscaL(l, val); /* busca o elemento na linha */
+	Elemento *valor = buscaL(l, val->desc); /* busca o elemento na linha */
 
 	atual=anterior->prox;
 

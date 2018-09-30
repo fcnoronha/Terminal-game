@@ -11,10 +11,6 @@ typedef struct EloL{
 
 	
 // Aponta pro primeiro elemento da lista
-
-
-// Hashtable em si
-
 typedef struct{
 	int tamanho;
 	EloL *Lista;
@@ -27,6 +23,6 @@ void destroiL(Lista *l);
 
 Elemento * insereL(Lista *l, Elemento *val);
 
-Elemento * buscaL(Lista *l, Elemento *val);
+Elemento * buscaL(Lista *l, char *n);
 
 Elemento * retiraL(Lista *l, Elemento *val);
