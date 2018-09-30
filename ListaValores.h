@@ -8,13 +8,13 @@ typedef struct EloL{
 	Elemento *valor; // a ser definido
 	struct EloL *prox;
 } EloL;
-<<<<<<< HEAD
+
 	
 // Aponta pro primeiro elemento da lista
-=======
+
 
 // Hashtable em si
->>>>>>> refs/remotes/origin/master
+
 typedef struct{
 	int tamanho;
 	EloL *Lista;
