@@ -70,17 +70,20 @@ void testaLista(){
         printf("inseriu com sucesso!\n");
     else printf("inseriu tudo errado!\n");
 
-
+    printf("%s\n", aeronavegadores->Lista->valor->desc);
 	// Testando a busca
 
 	printf("Buscando elementos:\n");
-	printf("'Voa e pega fogo.': ");
+	printf("'Voa e pega fogo.': \n");
 	testaBuscaL(aeronavegadores, dirigivel);
-	printf("'Carrega um po branco.': ");
+
+	printf("'Carrega um po branco.': \n");
 	testaBuscaL(aeronavegadores, helicoptero);
-	printf("'Homenagem a um certo gato.': ");
+
+	printf("'Homenagem a um certo gato.': \n");
 	testaBuscaL(aeronavegadores, jato);
-	printf("'Serve para planar.': ");
+
+	printf("'Serve para planar.': \n");
 	testaBuscaL(aeronavegadores, planador);
 
 
