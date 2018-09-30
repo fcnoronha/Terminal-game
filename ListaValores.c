@@ -71,15 +71,24 @@ Elemento * insereL(Lista *l, Elemento *val)
 
 Elemento *buscaL(Lista *l, char *n)
 {
+	printf("OI1\n");
 	EloL *atual = l->Lista;
+	printf("OI2\n");
 	while(atual->prox != NULL) /* percorre a lista ate o final */
 	{
-		if (!strcmp(atual->valor->desc, n)) /* compara elemento com n */
+		printf("%s\n", n);
+		printf("%s\n", atual->valor->desc);
+		if (strcmp(atual->valor->desc, n) == 0) /* compara elemento com n */
+			{
+			printf("OI4\n");
 			return atual->valor;
+		}
+		printf("OI5\n");
 		atual = atual->prox;
 	}
 
-	if (!strcmp(atual->valor->desc, n)) /* checa se nao estava no ultimo */
+	printf("OI6\n");
+	if (strcmp(atual->valor->desc, n) == 0) /* checa se nao estava no ultimo */
 			return atual->valor;
 	return NULL;
 }
