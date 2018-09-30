@@ -4,6 +4,8 @@
 
 #include"ListaValores.h" // Usando meu cabeçalho
 
+//#define NULL ((void*)0)
+
 Lista *criaL()
 {
 	Lista *l = NULL; /* ponteiro pra lista */
@@ -45,16 +47,22 @@ Elemento * insereL(Lista *l, Elemento *val)
 	/* cria EloL */
 	EloL *aux = malloc(sizeof(EloL));
 	EloL *atual = l->Lista;
+	if (atual == NULL)
+	{
+		l->tamanho++;
+		l->Lista = val;
+		l->Lista->prox = NULL;
+		return val;
+	}
 	aux->valor = val;
 	aux->prox = NULL;
 
-	if (buscaL(l, val->desc) != NULL) return val; /* se o elemento ja estiver na lista ele mesmo eh retornado */
+	//if (buscaL(l, val->desc) != NULL) return val; /* se o elemento ja estiver na lista ele mesmo eh retornado */
 
 	while ( atual != NULL && atual->prox != NULL)  /* percorre a lista ate o final */
 	{
 		atual = atual->prox;
 	}
-
 	l->tamanho++; /* atualiza tamanho da lista */
 	atual->prox = aux; /* insere novo elo */
 	return aux->valor;
