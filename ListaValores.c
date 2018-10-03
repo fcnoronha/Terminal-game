@@ -23,17 +23,14 @@ void destroiL(Lista *l)
 
 	atual = l->Lista; /* atual recebe primeiro elemento */
 
+	while(atual->prox!= NULL){ /* percorre a lista ate o final */
 
-	while(atual->prox!= NULL) /* percorre a lista ate o final */
-
-	{
 		aux = atual->prox;
 
 		free(atual->valor);
 		free(atual);
 
 		atual = aux;
-
 	}
 
 	free(l->Lista);
@@ -41,14 +38,11 @@ void destroiL(Lista *l)
 }
 
 
-Elemento * insereL(Lista *l, Elemento *val)
-{
-
+Elemento * insereL(Lista *l, Elemento *val){
 	/* cria EloL */
 	EloL *aux = malloc(sizeof(EloL));
 	EloL *atual = l->Lista;
-	if (atual == NULL)
-	{
+	if (atual == NULL){
 		EloL aux2;
 		aux2.valor = val;
 		aux2.prox = NULL;
@@ -61,14 +55,12 @@ Elemento * insereL(Lista *l, Elemento *val)
 
 	//if (buscaL(l, val->desc) != NULL) return val; /* se o elemento ja estiver na lista ele mesmo eh retornado */
 
-	while ( atual != NULL && atual->prox != NULL)  /* percorre a lista ate o final */
-	{
+	while ( atual != NULL && atual->prox != NULL){ /* percorre a lista ate o final */
 		atual = atual->prox;
 	}
 	l->tamanho++; /* atualiza tamanho da lista */
 	atual->prox = aux; /* insere novo elo */
 	return aux->valor;
-
 }
 
 Elemento *buscaL(Lista *l, char *n)
@@ -77,7 +69,7 @@ Elemento *buscaL(Lista *l, char *n)
 	while(atual->prox != NULL) /* percorre a lista ate o final */
 	{
 		if (strcmp(atual->valor->desc, n) == 0) /* compara elemento com n */
-			{
+		{
 			return atual->valor;
 		}
 		atual = atual->prox;
@@ -109,5 +101,4 @@ Elemento *retiraL(Lista *l, Elemento *val)
 	printf("olha aqui gus\n");
 
 	return (atual->valor);
-
 }
