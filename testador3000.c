@@ -248,6 +248,6 @@ int main(){
 	testaHashTable();
 	testaLista();
 
-	// Esta dando erro nas structs, pq eu importo estrtutas.h 2x
+	// Esta dando segfault, nao sei pq
 
 }

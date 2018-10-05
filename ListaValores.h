@@ -1,4 +1,4 @@
-
+#pragma once
 #include "Estruturas.h"
 
 Lista * criaL();

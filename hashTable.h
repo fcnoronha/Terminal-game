@@ -1,4 +1,4 @@
-
+#pragma once
 #include "Estruturas.h"
 
 TabSim *criaS(int);
