@@ -15,13 +15,13 @@ make all
 void testaHashTable(){
 
 	Elemento batata;
-	strcpy(batata.desc, "Alimento amarelo e totoso");
+	batata.desc = "Alimento amarelo e totoso";
 
 	Elemento oculos;
-	strcpy(oculos.desc, "Pra te ver melhor");
+	oculos.desc = "Pra te ver melhor";
 
 	Elemento felipe;
-	strcpy(felipe.desc, "Menino lindo que estuda no IME");
+	felipe.desc = "Menino lindo que estuda no IME";
 
 	int t = 100; // Tamanho da minha tabela
 
@@ -127,16 +127,16 @@ void testaHashTable(){
 void testaLista(){
 
 	Elemento dirigivel;
-	strcpy(dirigivel.desc, "Voa e pega fogo.");
+	dirigivel.desc = "Voa e pega fogo.";
 
 	Elemento helicoptero;
-	strcpy(helicoptero.desc, "Carrega um po branco.");
+	helicoptero.desc = "Carrega um po branco.";
 
 	Elemento jato;
-	strcpy(jato.desc, "Homenagem a um certo gato.");
+	jato.desc = "Homenagem a um certo gato.";
 
 	Elemento planador;
-	strcpy(planador.desc, "Serve para planar.");
+	planador.desc = "Serve para planar.";
 
 	//int l = 100; // Tamanho da lista de valores
 
