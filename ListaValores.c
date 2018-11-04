@@ -12,6 +12,8 @@ Lista *criaL()
 	l = malloc(sizeof(Lista));
 	if (l == NULL) return NULL; /* checando alocacao */
 	l->tamanho=0;
+	l->Lista = NULL; // O FELIPE E MUITO FODA, NAMORAL
+					 // AINDA POR CIMA, E GATO DEMAISSSS
 
 	return l;
 }
@@ -42,14 +44,15 @@ Elemento * insereL(Lista *l, Elemento *val){
 	/* cria EloL */
 	EloL *aux = malloc(sizeof(EloL));
 	EloL *atual = l->Lista;
+
 	if (atual == NULL){
-		EloL aux2;
-		aux2.valor = val;
-		aux2.prox = NULL;
+		aux->valor = val;
+		aux->prox = NULL;
 		l->tamanho++;
-		l->Lista = &aux2;
+		l->Lista = aux;
 		return val;
 	}
+
 	aux->valor = val;
 	aux->prox = NULL;
 
@@ -66,7 +69,7 @@ Elemento * insereL(Lista *l, Elemento *val){
 Elemento *buscaL(Lista *l, char *n)
 {
 	EloL *atual = l->Lista;
-	while(atual->prox != NULL) /* percorre a lista ate o final */
+	while(atual != NULL) /* percorre a lista ate o final */
 	{
 		if (strcmp(atual->valor->desc, n) == 0) /* compara elemento com n */
 		{
@@ -74,31 +77,38 @@ Elemento *buscaL(Lista *l, char *n)
 		}
 		atual = atual->prox;
 	}
-	if (strcmp(atual->valor->desc, n) == 0) /* checa se nao estava no ultimo */
+	/*if (strcmp(atual->valor->desc, n) == 0) // checa se nao estava no ultimo 
 	{
 		return atual->valor;
 	}
+	*/
+
 	return NULL;
 }
 
 Elemento *retiraL(Lista *l, Elemento *val)
 {
-	EloL *atual;
-	EloL *anterior = l->Lista;
+	EloL *atual = l->Lista;
+	EloL *anterior;
 	Elemento *valor = buscaL(l, val->desc); /* busca o elemento na linha */
 
-	atual=anterior->prox;
+	if (atual == NULL || valor == NULL) return NULL; /* se elemento nao estiver na lista, retorna NULL */
 
-	if(valor == NULL) return NULL; /* se elemento nao estiver na lista, retorna NULL */
+	if (atual->valor == val){
+		l->Lista = atual->prox;
+		return val;
+	}
 
-	while(anterior->valor != val) /* encontra elo anterior ao do elemento */
+	anterior = atual;
+	atual = atual->prox;
+
+	while(atual->valor != val) /* encontra elo anterior ao do elemento */
 	{
-		anterior=anterior->prox;
-		atual=atual->prox;
+		anterior = anterior->prox;
+		atual = atual->prox;
 	}
 
 	anterior->prox = atual->prox; /* atualiza os elos */
-	printf("olha aqui gus\n");
 
-	return (atual->valor);
+	return val;
 }

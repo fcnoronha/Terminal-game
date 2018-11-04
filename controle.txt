@@ -6,7 +6,7 @@
 
 Coisas para serem feitas:
 
-1 - Organizar pasta do projeto (headers, modulos e make) e arrumar erros conhecidos;
+FEITO - Organizar pasta do projeto (headers, modulos e make) e arrumar erros conhecidos;
 
 2 - Definir/complementar struct de elemento;
 
@@ -25,10 +25,3 @@ Coisas para serem feitas:
 6 - Criar descriçoes para salas, objetos e para o jogo em si;
 
 7 - Criar verbos especificos para salas e objetos (????).
-
-
-
-
-Coisas com erro:
-
-- Includes nas headers. Provavel causa do motivo das segfauts;

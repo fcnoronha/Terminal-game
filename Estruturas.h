@@ -1,4 +1,5 @@
-#pragma once 
+# ifndef _Estruturas_h // Impedindo que isso seja recompilado
+# define _Estruturas_h 
 
 struct ele;
 
@@ -62,3 +63,5 @@ typedef struct{
 	int tamanho;
 	EloL *Lista;
 } Lista;
+
+# endif

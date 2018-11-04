@@ -14,6 +14,8 @@ make all
 
 void testaHashTable(){
 
+	printf("\n\nTESTANDO HASHTABLE\n\n");
+
 	Elemento batata;
 	batata.desc = "Alimento amarelo e totoso";
 
@@ -126,6 +128,8 @@ void testaHashTable(){
 
 void testaLista(){
 
+	printf("\n\n TESTANDO LISTA DE VALORES \n\n");
+
 	Elemento dirigivel;
 	dirigivel.desc = "Voa e pega fogo.";
 
@@ -142,7 +146,6 @@ void testaLista(){
 
 	Lista *aeronavegadores;
 	aeronavegadores = criaL();
-
 
 	// Testando a inserção
 
@@ -169,8 +172,8 @@ void testaLista(){
 
     Elemento *busca;
 	printf("Buscando elementos:\n");
-
-	printf("'Voa e pega fogo.': ");
+ 
+	printf("'Voa e pega fogo.': "); printf("\n");
 	busca = buscaL(aeronavegadores, dirigivel.desc);
 	if (busca == NULL) printf("Elemento não encontrado.\n");
 	else if (busca == &dirigivel) printf("Achou!\n");
