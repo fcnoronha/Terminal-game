@@ -1,4 +1,6 @@
-#pragma once
+# ifndef _hashTable_h // Avoiding conflicts errors
+# define _hashTable_h 
+
 #include "Estruturas.h"
 
 TabSim *criaS(int);
@@ -10,3 +12,5 @@ int insereS(TabSim*, char*, Elemento*);
 Elemento *buscaS(TabSim*, char*);
 
 int retiraS(TabSim*, char*);
+
+# endif

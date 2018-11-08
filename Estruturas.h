@@ -1,9 +1,9 @@
-# ifndef _Estruturas_h // Impedindo que isso seja recompilado
+# ifndef _Estruturas_h // Avoiding conflicts errors
 # define _Estruturas_h 
 
 struct ele;
 
-struct tb; // Declarando antees, pois ha um uso circular;
+struct tb; // Declaring before, because there is a circular use
 
 typedef char Bool;
 
@@ -11,7 +11,7 @@ typedef char Bool;
 #define False 0;
 
 typedef struct ele{
-	char *desc; // So pro tetador continuar funcioando
+	char *desc; // Only for testador3000 keep working
 	char *nome;
 	char *curta;
 	char *longa;
@@ -29,39 +29,47 @@ typedef struct ele{
 	Bool isCoisa;
 
 	union{
-		// Se for uma coisa, importa atributo
-		// Se for um lugar, importa saida
-		struct ele *saidas;
+		// If it is an obj, uses atributo
+		// If is ts an exit, uses saidas
+		struct ele **saidas; // Remember to inittialize // [0] = N, [1] = L, [2] = S, [3] = O
 		struct tb *atributos;
 	} atrida;
 
 } Elemento;
 
-// Elos da minha HashTable, que formam uma lista linkada
+// Componentes of my hashTable
 typedef struct Elo{
 	int chave;
 	char *nome;
-	Elemento *valor; // a ser definido
+	Elemento *valor; // to be defined
 	struct Elo *prox;
 } Elo;
 
-// Hashtable em si
+// Hashtable itself
 typedef struct tb{
 	int tamanho;
 	Elo **Tabela;
 } TabSim;
 
-// Elos da minha Lista, que formam uma lista linkada
+// components of my list
 typedef struct EloL{
-	Elemento *valor; // a ser definido
+	Elemento *valor; // to be defined
 	struct EloL *prox;
 } EloL;
 
 
-// Aponta pro primeiro elemento da lista
+// Head of linked list
 typedef struct{
 	int tamanho;
 	EloL *Lista;
 } Lista;
+
+// Creating a struct just for the character
+typedef struct{
+	char *nome; // Can ask in the game
+	Elemento *salaAtual;
+	Elemento **mochila;
+
+} Personagem;
 
 # endif
