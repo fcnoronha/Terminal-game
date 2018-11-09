@@ -5,18 +5,15 @@ struct ele;
 
 struct tb; // Declaring before, because there is a circular use
 
-typedef char Bool;
-
-#define True 1;
-#define False 0;
+typedef enum {false, true} boolean;
 
 typedef struct ele{
 	char *desc; // Only for testador3000 keep working
 	char *nome;
 	char *curta;
 	char *longa;
-	Bool ativo;
-	Bool visivel;
+	boolean ativo;
+	boolean visitado;
 	struct ele **conteudo;
 	/*
 	fun *açoes -> lista de ponteiros para funçoes
@@ -25,8 +22,8 @@ typedef struct ele{
 		FPTR *açoess
 	*/
 	//?? *animaçao -> ponteiro para funçao que ira fazer uma animaçao
-	Bool isLugar;
-	Bool isCoisa;
+	boolean isLugar;
+	boolean isCoisa;
 
 	union{
 		// If it is an obj, uses atributo
@@ -66,7 +63,7 @@ typedef struct{
 
 // Creating a struct just for the character
 typedef struct{
-	char *nome; // Can ask in the game
+	char nome[20]; // Can ask in the game
 	Elemento *salaAtual;
 	Elemento **mochila;
 
