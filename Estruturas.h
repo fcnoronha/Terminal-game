@@ -26,9 +26,9 @@ typedef struct ele{
 	boolean isCoisa;
 
 	union{
-		// If it is an obj, uses atributo
 		// If is ts an exit, uses saidas
-		struct ele **saidas; // Remember to inittialize // [0] = N, [1] = L, [2] = S, [3] = O
+		struct ele **saidas; // [0] = N, [1] = L, [2] = S, [3] = O
+		// If it is an obj, uses atributo
 		struct tb *atributos;
 	} atrida;
 
@@ -48,12 +48,23 @@ typedef struct tb{
 	Elo **Tabela;
 } TabSim;
 
-// components of my list
+// My function pointer
+typedef int (*FPTR)(Elemento*, Elemento*);
+
+// Defining union to be used in the linked list
+typedef union e{
+	Elemento *obj;
+	FPTR fun; // Make instc.fun = dumbFunction;
+} Elecao;
+
+// components of my linked list
 typedef struct EloL{
-	Elemento *valor; // to be defined
+	char *tag; // Used to find something in the list
+	Elecao inst;
+	Elemento *valor; // Just for the tester to keep working
+	char *info; // about what is the component of the union
 	struct EloL *prox;
 } EloL;
-
 
 // Head of linked list
 typedef struct{
