@@ -1,0 +1,3 @@
+fazer um enum para as direções (NORTE,SUL,LESTE,OESTE) e apremder como isso funciona
+
+adicionar palavras ao dicionario / definir dicionario
