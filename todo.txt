@@ -1,11 +1,12 @@
-fazer um enum para as direções (NORTE,SUL,LESTE,OESTE) e apremder como isso funciona
-
-adicionar palavras ao dicionario / definir dicionario
+Create lists in the character, rooms and future objects, the lists. 
+	Uma sala vai ter uma lista conteudo, em que seus elos irão guardar elementos, ademais, uma sala tera uma lista funções, que vai guardar as funções dql sala.
+	Um objeto vai ter uma lista funções, que guarda as funções realcionadas a ele.
 
 criar ações.c e .h, e colocar essa fuções na lsita
 
 criar um novo testador / Update changes in the testador.c (make it works with the changes in the list)
 
-Create lists in the character, rooms and future objects
 
 Use insreElol, buscaEle
+
+definir lista de ações globais

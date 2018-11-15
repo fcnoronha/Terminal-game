@@ -114,6 +114,20 @@ EloL *buscaElol(Lista *l, char *tag)
 	return NULL; // If don't find
 }
 
+EloL *buscaEle(Lista *l, Elemento *s)
+{
+	EloL *atual = l->Lista;
+
+	while(atual != NULL){
+		if (atual->inst.obj == s)		
+			return atual;
+		
+		atual = atual->prox;
+	}
+
+	return NULL; // If don't find
+}
+
 
 Elemento *retiraL(Lista *l, Elemento *val)
 {
@@ -122,6 +136,8 @@ Elemento *retiraL(Lista *l, Elemento *val)
 	Elemento *valor = buscaL(l, val->desc); /* busca o elemento na linha */
 
 	if (atual == NULL || valor == NULL) return NULL; /* se elemento nao estiver na lista, retorna NULL */
+
+	l->tamanho--;
 
 	if (atual->valor == val){
 		l->Lista = atual->prox;
@@ -148,9 +164,10 @@ int retiraElol(Lista *l, char *tag)
 	EloL *anterior;
 
 	if (atual == NULL) return 0; // There is nothing on the list
-
+	l->tamanho--;
 	if (strcmp(atual->info, tag) == 0){
 		l->Lista = atual->prox;
+
 		// Doens't free because this elo may go to another list
 		return 1;
 	}

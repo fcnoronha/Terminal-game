@@ -29,7 +29,7 @@ Elemento * buscaL(Lista *l, char *n);
 Elemento * retiraL(Lista *l, Elemento *val);
 
 /*
- Insert hole EloL in the list, returning 1 if it was sucessfull and
+ Insert Element in the list, returning 1 if it was sucessfull and
  0 otherwise.
 */
 int insereElol(Lista *l, EloL *val);
@@ -39,6 +39,12 @@ int insereElol(Lista *l, EloL *val);
  if couldn't find.
 */
 EloL *buscaElol(Lista *l, char *tag);
+
+/*
+ Find and return Elol associated with the given element. Return NULL
+ if couldn't find.
+*/
+EloL *buscaEle(Lista *l, Elemento *s);
 
 /*
  Given a tag, removes its EloL from the list, returning 1 if it was 

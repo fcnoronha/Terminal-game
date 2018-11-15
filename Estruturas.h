@@ -1,40 +1,18 @@
 # ifndef _Estruturas_h // Avoiding conflicts errors
 # define _Estruturas_h 
 
-struct ele;
+// Declaring before, because there is a circular use
+typedef struct ele Elemento;
 
-struct tb; // Declaring before, because there is a circular use
+typedef struct p Personagem;
+
+struct tb; 
 
 typedef enum {false, true} boolean;
 
 typedef enum {NORTE, LESTE, SUL, OESTE} dir;
 
-typedef struct ele{
-	char *desc; // Only for testador3000 keep working
-	char *nome;
-	char *curta;
-	char *longa;
-	boolean ativo;
-	boolean visitado;
-	struct ele **conteudo;
-	/*
-	fun *açoes -> lista de ponteiros para funçoes
-	lista do genero: 
-		typedef Elemento (* FPTR ) ( int ) ;
-		FPTR *açoess
-	*/
-	//?? *animaçao -> ponteiro para funçao que ira fazer uma animaçao
-	boolean isLugar;
-	boolean isCoisa;
-
-	union{
-		// If is ts an exit, uses saidas
-		struct ele **saidas; // [0] = N, [1] = L, [2] = S, [3] = O
-		// If it is an obj, uses atributo
-		struct tb *atributos;
-	} atrida;
-
-} Elemento;
+// ------------------ HASHTABLE
 
 // Componentes of my hashTable
 typedef struct Elo{
@@ -51,8 +29,10 @@ typedef struct tb{
 	Elo **Tabela;
 } TabSim;
 
+// ------------------ LINKED LIST
+
 // My function pointer
-typedef int (*FPTR)(Elemento*, Elemento*);
+typedef int (*FPTR)(Personagem*, Elemento*);
 
 // Defining union to be used in the linked list
 typedef union e{
@@ -70,17 +50,44 @@ typedef struct EloL{
 } EloL;
 
 // Head of linked list
-typedef struct{
+typedef struct l{
 	int tamanho;
 	EloL *Lista;
 } Lista;
 
+// ---------------------------------
+
 // Creating a struct just for the character
-typedef struct{
+struct p {
 	char nome[20]; // Can ask in the game
 	Elemento *salaAtual;
-	Elemento **mochila;
+	Lista *mochila;
+};
 
-} Personagem;
+struct ele{
+	char *desc;
+	char *nome;
+	char *curta;
+	char *longa;
+	boolean ativo;
+	boolean visitado;
+	Lista *conteudo;
+	/*
+	fun *açoes -> lista de ponteiros para funçoes
+	lista do genero: 
+		typedef Elemento (* FPTR ) ( int ) ;
+		FPTR *açoess
+	*/
+	//?? *animaçao -> ponteiro para funçao que ira fazer uma animaçao
+	boolean isLugar;
+	boolean isCoisa;
+
+	union{
+		// If is ts an exit, uses saidas
+		struct ele **saidas; // [0] = N, [1] = L, [2] = S, [3] = O
+		// If it is an obj, uses atributo
+		struct tb *atributos;
+	} atrida;
+};
 
 # endif
