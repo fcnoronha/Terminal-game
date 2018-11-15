@@ -7,6 +7,8 @@ struct tb; // Declaring before, because there is a circular use
 
 typedef enum {false, true} boolean;
 
+typedef enum {NORTE, LESTE, SUL, OESTE} dir;
+
 typedef struct ele{
 	char *desc; // Only for testador3000 keep working
 	char *nome;
@@ -37,6 +39,7 @@ typedef struct ele{
 // Componentes of my hashTable
 typedef struct Elo{
 	int chave;
+	char *sinonimo;
 	char *nome;
 	Elemento *valor; // to be defined
 	struct Elo *prox;

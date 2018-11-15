@@ -155,3 +155,55 @@ int retiraS(TabSim *t, char *n)
 
 	return 0; // Erro
 }
+
+int insereSin(TabSim *t, char *n, char *sin)
+{
+	int h = hashFun(n, t->tamanho);
+
+	// Nao foi possivel inserir pq o elemento ja existe
+	if (buscaS(t, n) != NULL) return 0;
+
+	// Criando um Elo com as informaçoes passadas
+	Elo *aux = malloc(sizeof(Elo));
+	aux->chave = h;
+	aux->valor = val;
+	aux->nome = n;
+	aux->prox = NULL;
+
+	// Pego a lista que vai conter todos os elos dql valor
+	Elo *sec = t->Tabela[h];
+
+	// Caso ainda nao tenha nenhum elo nql valor
+	if (sec == NULL){
+		t->Tabela[h] = aux;
+		return 1; // Inserçao bem sucedida
+	}
+
+	// Percorrendo lista linkada ate chegar no final
+	while (sec->prox != NULL)
+		sec = sec->prox;
+
+	// Adicionando elo no final
+	sec->prox = aux;
+
+	// Inserçao bem sucedida
+	return 1;
+}
+
+char *buscaSin(TabSim *t, char *n)
+{
+	int h = hashFun(n, t->tamanho);
+
+	Elo *sec = t->Tabela[h]; // Pegando a lista linkada dql valor
+	if (sec == NULL) return NULL; // Caso nao tenha elos com o valor
+
+	while (sec->prox != NULL && strcmp(n, sec->nome) != 0){
+		sec = sec->prox; // Compara ate achar na lista encadeada
+	}
+
+	// Caso eu tenha chegado noq eu quero
+	if (strcmp(n, sec->nome) == 0)
+		return sec->valor;
+
+	return NULL; // Nao achei
+}

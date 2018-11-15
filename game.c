@@ -44,10 +44,10 @@ void inicializa(){
 	identidade->isCoisa = false;
 	// 4 directions and their respective rooms
 	identidade->atrida.saidas = malloc(4 * sizeof(Elemento*));
-	identidade->atrida.saidas[0] = prazer;
-	identidade->atrida.saidas[1] = racional;
-	identidade->atrida.saidas[2] = NULL;
-	identidade->atrida.saidas[3] = NULL;
+	identidade->atrida.saidas[NORTE] = prazer;
+	identidade->atrida.saidas[LESTE] = racional;
+	identidade->atrida.saidas[SUL] = NULL;
+	identidade->atrida.saidas[OESTE] = NULL;
 
 	
 	// 'prazer' room
@@ -63,10 +63,10 @@ void inicializa(){
 	prazer->isLugar = true;
 	prazer->isCoisa = false;
 	prazer->atrida.saidas = malloc(4 * sizeof(Elemento*));
-	prazer->atrida.saidas[0] = NULL;
-	prazer->atrida.saidas[1] = NULL;
-	prazer->atrida.saidas[2] = identidade;
-	prazer->atrida.saidas[3] = ego;
+	prazer->atrida.saidas[NORTE] = NULL;
+	prazer->atrida.saidas[LESTE] = NULL;
+	prazer->atrida.saidas[SUL] = identidade;
+	prazer->atrida.saidas[OESTE] = ego;
 
 	
 	// 'racional' room
@@ -83,10 +83,10 @@ void inicializa(){
 	racional->isCoisa = false;
 	// 4 directions and their respective rooms
 	racional->atrida.saidas = malloc(4 * sizeof(Elemento*));
-	racional->atrida.saidas[0] = NULL;
-	racional->atrida.saidas[1] = NULL;
-	racional->atrida.saidas[2] = medo;
-	racional->atrida.saidas[3] = identidade;
+	racional->atrida.saidas[NORTE] = NULL;
+	racional->atrida.saidas[LESTE] = NULL;
+	racional->atrida.saidas[SUL] = medo;
+	racional->atrida.saidas[OESTE] = identidade;
 	
 
 	// 'memoria' room
@@ -103,10 +103,10 @@ void inicializa(){
 	memoria->isCoisa = false;
 	// 4 directions and their respective rooms
 	memoria->atrida.saidas = malloc(4 * sizeof(Elemento*));
-	memoria->atrida.saidas[0] = NULL;
-	memoria->atrida.saidas[1] = identidade;
-	memoria->atrida.saidas[2] = medo;
-	memoria->atrida.saidas[3] = NULL;
+	memoria->atrida.saidas[NORTE] = NULL;
+	memoria->atrida.saidas[LESTE] = identidade;
+	memoria->atrida.saidas[SUL] = medo;
+	memoria->atrida.saidas[OESTE] = NULL;
 
 
 	// 'ego' room
@@ -123,10 +123,10 @@ void inicializa(){
 	ego->isCoisa = false;
 	// 4 directions and their respective rooms
 	ego->atrida.saidas = malloc(4 * sizeof(Elemento*));
-	ego->atrida.saidas[0] = NULL;
-	ego->atrida.saidas[1] = prazer;
-	ego->atrida.saidas[2] = NULL;
-	ego->atrida.saidas[3] = NULL;
+	ego->atrida.saidas[NORTE] = NULL;
+	ego->atrida.saidas[LESTE] = prazer;
+	ego->atrida.saidas[SUL] = NULL;
+	ego->atrida.saidas[OESTE] = NULL;
 	
 
 	// 'medo' room
@@ -143,10 +143,10 @@ void inicializa(){
 	medo->isCoisa = false;
 	// 4 directions and their respective rooms
 	medo->atrida.saidas = malloc(4 * sizeof(Elemento*));
-	medo->atrida.saidas[0] = identidade;
-	medo->atrida.saidas[1] = NULL;
-	medo->atrida.saidas[2] = NULL;
-	medo->atrida.saidas[3] = NULL;
+	medo->atrida.saidas[NORTE] = identidade;
+	medo->atrida.saidas[LESTE] = NULL;
+	medo->atrida.saidas[SUL] = NULL;
+	medo->atrida.saidas[OESTE] = NULL;
 
 
 	// Initializing the character
@@ -157,5 +157,7 @@ void inicializa(){
 int main(){
 	inicializa();
 
+	VisitaSala(pessoa);
+	
 
 }

@@ -1,0 +1,1413 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"end",
+				"endif\t(Estruturas.h)"
+			],
+			[
+				"has",
+				"hashFun\t(hashTable.c)"
+			],
+			[
+				"in",
+				"insert"
+			],
+			[
+				"elem",
+				"element"
+			],
+			[
+				"pr",
+				"Print"
+			],
+			[
+				"r",
+				"root"
+			],
+			[
+				"pos",
+				"posOrder"
+			],
+			[
+				"pre",
+				"preOrder"
+			],
+			[
+				"node",
+				"nodeCnt"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"s",
+				"strong"
+			],
+			[
+				"docum",
+				"document\t(odometer.js)"
+			],
+			[
+				"odometer-the",
+				"odometer-theme-default\t(odometer-theme-default.css)"
+			],
+			[
+				"ba",
+				"background-image\tproperty"
+			],
+			[
+				"ele",
+				"elecao"
+			],
+			[
+				"IDE",
+				"identidade"
+			],
+			[
+				"vi",
+				"visited"
+			],
+			[
+				"PR",
+				"printf"
+			],
+			[
+				"Lis",
+				"Lista"
+			],
+			[
+				"L",
+				"Lista"
+			],
+			[
+				"te",
+				"testador3000"
+			],
+			[
+				"o",
+				"objects"
+			],
+			[
+				"au",
+				"aux3"
+			],
+			[
+				"ini",
+				"ini1"
+			],
+			[
+				"p",
+				"push_back"
+			],
+			[
+				"a",
+				"aux"
+			],
+			[
+				"h",
+				"heapS"
+			],
+			[
+				"fi",
+				"filho"
+			],
+			[
+				"me",
+				"mergeS"
+			],
+			[
+				"wg",
+				"wg_max"
+			],
+			[
+				"MA",
+				"MAXS"
+			],
+			[
+				"su",
+				"sum_l"
+			],
+			[
+				"Re",
+				"return"
+			],
+			[
+				"an",
+				"ang3"
+			],
+			[
+				"aux",
+				"aux1"
+			],
+			[
+				"ax",
+				"aux2"
+			],
+			[
+				"El",
+				"Elemento"
+			],
+			[
+				"Tab",
+				"TabSim"
+			],
+			[
+				"tes",
+				"testaLista"
+			],
+			[
+				"atr",
+				"atributo"
+			],
+			[
+				"tab",
+				"TabSim"
+			],
+			[
+				"O",
+				"o"
+			],
+			[
+				"max",
+				"maximal"
+			],
+			[
+				"ma",
+				"maximal"
+			],
+			[
+				"imr",
+				"imprimeMatriz"
+			],
+			[
+				"op",
+				"opcoes"
+			],
+			[
+				"pal",
+				"palavras"
+			],
+			[
+				"po",
+				"prox"
+			],
+			[
+				"str",
+				"strcmp"
+			],
+			[
+				"tabe",
+				"Tabela"
+			],
+			[
+				"fun",
+				"hashFun"
+			],
+			[
+				"t",
+				"typedef"
+			],
+			[
+				"Elo",
+				"Elemento"
+			],
+			[
+				"tam",
+				"tamanho"
+			],
+			[
+				"n",
+				"NULL"
+			],
+			[
+				"ta",
+				"tamanho"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"ind",
+				"indice"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"imrp",
+				"imprimeTabuleiro"
+			],
+			[
+				"palaa",
+				"InvertePalavra"
+			],
+			[
+				"pa",
+				"palavras"
+			],
+			[
+				"pala",
+				"palalvra"
+			],
+			[
+				"id",
+				"idxPal"
+			],
+			[
+				"pi",
+				"pilha"
+			],
+			[
+				"ver",
+				"verAtual"
+			],
+			[
+				"too",
+				"topoPilha"
+			],
+			[
+				"nver",
+				"nVertices"
+			],
+			[
+				"vai",
+				"vaiDar"
+			],
+			[
+				"montar",
+				"montarTabuleiro"
+			],
+			[
+				"cont",
+				"conta_tamanho"
+			],
+			[
+				"n_",
+				"n_vertices"
+			],
+			[
+				"q",
+				"qright"
+			],
+			[
+				"i",
+				"index_updt"
+			],
+			[
+				"lft",
+				"left"
+			],
+			[
+				"f",
+				"fst"
+			],
+			[
+				"del",
+				"delta_up"
+			],
+			[
+				"delt",
+				"delta_up"
+			],
+			[
+				"srt",
+				"srt_node"
+			],
+			[
+				"bi",
+				"build"
+			],
+			[
+				"e",
+				"end"
+			],
+			[
+				"int",
+				"int_max"
+			],
+			[
+				"ans",
+				"ansb"
+			],
+			[
+				"change",
+				"change_lazy"
+			],
+			[
+				"fim",
+				"fim"
+			],
+			[
+				"ll",
+				"llINF"
+			],
+			[
+				"B",
+				"B"
+			],
+			[
+				"de",
+				"delete"
+			],
+			[
+				"min",
+				"miny"
+			],
+			[
+				"if",
+				"llINF"
+			],
+			[
+				"x",
+				"x"
+			],
+			[
+				"fal",
+				"false"
+			],
+			[
+				"mp",
+				"mp1"
+			],
+			[
+				"co",
+				"cont_v"
+			],
+			[
+				"en",
+				"endl"
+			],
+			[
+				"cot",
+				"corte"
+			],
+			[
+				"vis",
+				"visitado"
+			],
+			[
+				"visi",
+				"visitavel"
+			],
+			[
+				"vii",
+				"visitavel"
+			],
+			[
+				"pus",
+				"push"
+			],
+			[
+				"pu",
+				"push"
+			],
+			[
+				"visit",
+				"visitavel"
+			],
+			[
+				"dist",
+				"dist2"
+			],
+			[
+				"vec",
+				"vector\tstd::vector"
+			],
+			[
+				"beg",
+				"begin"
+			],
+			[
+				"mi",
+				"meio"
+			],
+			[
+				"sum",
+				"sum_di"
+			],
+			[
+				"be",
+				"begin"
+			],
+			[
+				"delta",
+				"deltaT"
+			],
+			[
+				"mundo",
+				"mundoP"
+			],
+			[
+				"atual",
+				"atualizaTela"
+			],
+			[
+				"N",
+				"N"
+			],
+			[
+				"py",
+				"pygame"
+			],
+			[
+				"cps",
+				"cps_lin"
+			],
+			[
+				"comp",
+				"compartilhe"
+			],
+			[
+				"mun",
+				"mundoCompartilhado"
+			],
+			[
+				"__",
+				"__DEBUG__"
+			],
+			[
+				"com",
+				"comp"
+			],
+			[
+				"gi",
+				"girarDireita"
+			],
+			[
+				"gir",
+				"girarEsquerda"
+			],
+			[
+				"lis",
+				"lista"
+			],
+			[
+				"per",
+				"percepcao"
+			],
+			[
+				"ra",
+				"range"
+			],
+			[
+				"li",
+				"lista_usadas"
+			],
+			[
+				"ran",
+				"randint"
+			],
+			[
+				"mund",
+				"MundoDeWumpus"
+			],
+			[
+				"lsi",
+				"lista_usadas"
+			],
+			[
+				"perso",
+				"personagens"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "todo.txt",
+			"settings":
+			{
+				"buffer_size": 377,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "game.c",
+			"settings":
+			{
+				"buffer_size": 4119,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "hashTable.c",
+			"settings":
+			{
+				"buffer_size": 3445,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ListaValores.c",
+			"settings":
+			{
+				"buffer_size": 3221,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include<stdio.h>\n#include<stdlib.h>\n#include<string.h>\n\n#include\"acoes.h\"\n\n/*\n This module contais all the actions/functions that can be perfomed\n in the game. By definition they're all in the form:\n   int foo(element, element)\n and returns 1 if sucess and 0 otherwise.\n*/\n\n",
+			"file": "acoes.c",
+			"file_size": 0,
+			"file_write_time": 131867590425243741,
+			"settings":
+			{
+				"buffer_size": 275,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "hashTable.h",
+			"settings":
+			{
+				"buffer_size": 731,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "testador3000.c",
+			"settings":
+			{
+				"buffer_size": 7262,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ListaValores.h",
+			"settings":
+			{
+				"buffer_size": 971,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "game.h",
+			"settings":
+			{
+				"buffer_size": 293,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "# ifndef _acoes_h \n# define _acoes_h \n\n#include \"Estruturas.h\"\n\n/*\n This module contais all the actions/functions that can be perfomed\n in the game. By definition they're all in the form:\n   int foo(element, element)\n and returns 1 if sucess and 0 otherwise.\n*/\n\nvoid visitaSala()\n\n# endif",
+			"file": "acoes.h",
+			"file_size": 0,
+			"file_write_time": 131867590509688228,
+			"settings":
+			{
+				"buffer_size": 289,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Estruturas.h",
+			"settings":
+			{
+				"buffer_size": 1707,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				"Syntax Check"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"",
+				"Snippet: If Condition"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"markdownpre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdownprevi",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"markdwo",
+				"Preferences: MarkdownEditing Settings – Default"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"paco",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Install Package Control"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto"
+	],
+	"file_history":
+	[
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/LEIA FELIPE.txt.txt",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/batalha-final-ep5-master/controller_basic.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/batalha-final-ep5-master/runner_basic.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/batalha-final-ep5-master/shooter_basic.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/batalha-final-ep5-master/main.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/batalha-final-ep5-master/robot_fight.h",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/batalha-final-ep5-master/main.lua",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/batalha-final-ep5-master/make_ai",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/batalha-final-ep5-master/stupid.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep5/robotopGay.c",
+		"/media/felipe/Geral/Faculdade/git guide.txt",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/bst.c",
+		"/media/felipe/Geral/Maratonime/ToDo/e.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/b.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/Data structs/segTree.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/Misc/fastExp.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/a.cpp",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/heapSort.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/bubbleSort.c",
+		"/media/felipe/Geral/Maratonime/ToDo/aLinha.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/c.cpp",
+		"/home/felipe/Documentos/naoApagar.sh",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/lista.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/javaescriptos/tabs.js",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/css/odometer-theme-default.css",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/css/inicio.css",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/css/lista.css",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/denuncia.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/expLicitacao.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/javaescriptos/denuncia.js",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/botao.html",
+		"/home/felipe/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/lstLic.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/denuncias.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/contato.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/sbrNos.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/inicio.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/lstDenuncia.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/javaescriptos/odometer.min.js",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/javaescriptos/odometer.js",
+		"/home/felipe/Área de Trabalho/Bulma.io-axure-1.1.0/Bulma.io/8.0.0.3338.version",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/site/paginas/band.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/economizometro.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/home.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/list.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/list2.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/README.md",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/index.html",
+		"/media/felipe/Geral/Faculdade/Hackaton2018/resources/css/index.css",
+		"/media/felipe/Geral/Faculdade/Exemplos web/reactbut/like_button.js",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/game.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/hashTable.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/hashTable.h",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/Estruturas.h",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/testador3000.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/ListaValores.h",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/ListaValores.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/teste.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/relatorio.txt",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/makefile",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/game.h",
+		"/media/felipe/Geral/Maratonime/Uri/h.cpp",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/sla.c",
+		"/media/felipe/Geral/Maratonime/Caderno/Misc/lis.cpp",
+		"/home/felipe/s",
+		"/home/felipe/Downloads/beep.c",
+		"/media/felipe/Geral/Maratonime/Caderno/Graphs/topologicalSort.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/escalonamento.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/Graphs/Dijkstra.cpp",
+		"/media/felipe/Geral/Maratonime/Codcad/pontes(ex dijkstra).cpp",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto/controle.txt",
+		"/home/felipe/Área de Trabalho/automake-1.16/INSTALL",
+		"/home/felipe/Área de Trabalho/automake-1 (1).16/Makefile.am",
+		"/home/felipe/.cache/.fr-BZsN58/automake-1.16/INSTALL",
+		"/home/felipe/Área de Trabalho/automake-1.16.tar.xz.sig",
+		"/media/felipe/Geral/Maratonime/Caderno/Misc/primeCheck.cpp",
+		"/media/felipe/Geral/Maratonime/Codcad/reduzindo.cpp",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/sudoku.py",
+		"/media/felipe/Geral/Maratonime/Caderno/Graphs/kruskal.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/Data structs/unionFind.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/copadm.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/Misc/matrixExp.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/pizza.cpp",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/separaLL.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/linkedLists.c",
+		"/media/felipe/Geral/Maratonime/Caderno/Misc/knapsack.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/Graphs/knapsack.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/Misc/Pd (BC).txt",
+		"/media/felipe/Geral/Maratonime/Caderno/Misc/Gulosos e stl (BC).txt",
+		"/media/felipe/Geral/Maratonime/Caderno/Graphs/Grafos (BC).txt",
+		"/media/felipe/Geral/Maratonime/Caderno/Data structs/lazySeg.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/Data structs/seg tree.cpp",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/lista-ord.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/testesteste.txt",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/testes.txt",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep3/ep3.c",
+		"/media/felipe/Geral/Maratonime/Caderno/kruskal.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto (cópia)/hashTable.h",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto (cópia)/hashTable.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto (cópia)/teste.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto (cópia)/makefile",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto (cópia)/testador3000.c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto (cópia)/Estruturas.h",
+		"/media/felipe/Geral/Maratonime/Caderno/unionFind.c",
+		"/media/felipe/Geral/Maratonime/Caderno/kmp.c",
+		"/media/felipe/Geral/Maratonime/ToDo/viewa.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/geo.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/triangle.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/1065C.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/1065B.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/1065A.cpp",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1 (cópia)/sudoku.py",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1 (cópia)/testes.txt",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/sudoku - bagunça.py",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1 (cópia)/sudoku - bagunça.py",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/sudoku.py",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/t.py",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/sud.py",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/sudoku (1).py",
+		"/media/felipe/Geral/Maratonime/ToDo/sequencet.cpp",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/satispy-master/satispy/io/dimacs_cnf.py",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/minisat-2.2.0/minisat/README",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac239/ep1/satispy-master/setup.py",
+		"/home/felipe/Área de Trabalho/ep3 (1).c",
+		"/media/felipe/Geral/Faculdade/2 semestre/mac121/ep3/relatorio.md",
+		"/media/felipe/Geral/Maratonime/ToDo/cashier.cpp",
+		"/media/felipe/Geral/Maratonime/ToDo/forgery.cpp",
+		"/media/felipe/Geral/Maratonime/Caderno/kmp.txt"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"morra",
+			"die",
+			"right",
+			"textare",
+			"denuncia",
+			"denunca",
+			"denunc",
+			"inicio",
+			"setTime",
+			"/*",
+			"print",
+			"|",
+			"from",
+			"dis",
+			"Cnf",
+			"#include \"Estruturas.h\"",
+			"j",
+			"i",
+			"\");\n",
+			"m-1",
+			"m",
+			"nver",
+			"dbg",
+			"nodes1",
+			"y1",
+			"fun",
+			"modulo",
+			"lista",
+			"compartilhar",
+			"atirar",
+			"gireEsquerda",
+			"gireDireita",
+			"ande",
+			"acoes",
+			"salas",
+			"geraPosPersonagens",
+			"nWumpus",
+			"mundoCompartilhado",
+			"mundo",
+			"atirar",
+			"ande",
+			"PersonagemNUSP",
+			"iniciaPersonagens",
+			"self",
+			"acoes",
+			"processe",
+			"WUMPUS",
+			"PersonagemNUSP",
+			"Personagem",
+			"=",
+			"= [",
+			"[]",
+			"[",
+			"[]",
+			"modulo",
+			"K",
+			"w",
+			"enab",
+			"print",
+			"remove",
+			"posicao",
+			"livre",
+			"pos",
+			"ori",
+			"orientacao",
+			"ori",
+			"viz",
+			"planejar",
+			"time",
+			" <",
+			"pontoh"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"opcAtual",
+			"palAtual",
+			"ip1",
+			"passos",
+			"girarEsquerda",
+			"girarDireita",
+			"andar",
+			"res",
+			"j",
+			"salaLivre",
+			"tempo"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/media/felipe/Geral/Faculdade/2 semestre/mac216 - TecProg/Projeto"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "todo.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								296,
+								296
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "game.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4116,
+								4116
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1716.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "hashTable.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ListaValores.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3221,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								551,
+								551
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "acoes.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								275
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "hashTable.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								690,
+								690
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 39.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "testador3000.c",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 7262,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "ListaValores.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 971,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								922,
+								922
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "game.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "acoes.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								279,
+								279
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Estruturas.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1707,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 26.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 28.0
+	},
+	"pinned_build_system": "Packages/User/markdown.sublime-build",
+	"project": "",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
