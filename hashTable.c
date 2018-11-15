@@ -4,8 +4,8 @@
 
 #include"hashTable.h" // Usando meu cabeçalho
 
-int hashFun(char *n, int tam){
-	// Retorna a chave, valor hash, da string dada.
+int hashFun(char *n, int tam)
+{
 	int chave = 0, lst, i = 0;
 	while (n[i] != '\0'){
 		chave += (int)n[i]; // Soma todos valores ASCII
@@ -17,7 +17,8 @@ int hashFun(char *n, int tam){
 	return chave;
 }
 
-TabSim *criaS(int tam){
+TabSim *criaS(int tam)
+{
 	TabSim *t = NULL;	// Ponteiro que representara a tabela;
 	t = malloc(sizeof(TabSim));
 	if (t == NULL) return NULL; // Erro
@@ -33,8 +34,8 @@ TabSim *criaS(int tam){
 	return t;
 }
 
-void destroiS(TabSim *t){
-
+void destroiS(TabSim *t)
+{
 	// Percorre todas as chaves da lista
 	for (int i = 0; i < t->tamanho; i++){
 
@@ -53,8 +54,8 @@ void destroiS(TabSim *t){
 	free(t);
 }
 
-int insereS(TabSim *t, char *n, Elemento *val){
-
+int insereS(TabSim *t, char *n, Elemento *val)
+{
 	int h = hashFun(n, t->tamanho);
 
 	// Nao foi possivel inserir pq o elemento ja existe
@@ -87,8 +88,8 @@ int insereS(TabSim *t, char *n, Elemento *val){
 	return 1;
 }
 
-Elemento *buscaS(TabSim *t, char *n){
-
+Elemento *buscaS(TabSim *t, char *n)
+{
 	int h = hashFun(n, t->tamanho);
 
 	Elo *sec = t->Tabela[h]; // Pegando a lista linkada dql valor
@@ -105,8 +106,8 @@ Elemento *buscaS(TabSim *t, char *n){
 	return NULL; // Nao achei
 }
 
-int retiraS(TabSim *t, char *n){
-
+int retiraS(TabSim *t, char *n)
+{
 	int h = hashFun(n, t->tamanho);
 
 	// Ponteiros auxiliares, usados para religar elos da lista linkada

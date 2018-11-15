@@ -30,9 +30,6 @@ Personagem *pessoa;
 
 
 void inicializa(){
-	// Initialize the components of the game, passing informations and 
-	// allocating necessary memory
-
 	// 'identidade' room
 	identidade = malloc(sizeof(Elemento));
 	identidade->nome = "Identidade";
@@ -160,10 +157,5 @@ void inicializa(){
 int main(){
 	inicializa();
 
-	// TODO:
-	// Update changes in the testador.c (make it works with the changes in the list)
-	// Create hashTable dicionario here, and start giving synonyms to it;
-	// Create function and put them on the list
-	// Create lists in the character, rooms and future objects
-	// Use insreElol, buscaEle
+
 }

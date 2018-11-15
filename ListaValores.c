@@ -6,7 +6,6 @@
 
 Lista *criaL()
 {
-	// Create-allocate memory for the list
 	Lista *l = malloc(sizeof(Lista));
 	if (l == NULL) return NULL; // If allocation went well
 	l->tamanho = 0;
@@ -18,7 +17,6 @@ Lista *criaL()
 
 void destroiL(Lista *l)
 {
-	// Free all the memory used in the list
 	EloL *atual, *aux;
 	atual = l->Lista; 
 
@@ -34,8 +32,8 @@ void destroiL(Lista *l)
 	free(l);
 }
 
-Elemento *insereL(Lista *l, Elemento *val){
-	// Insert eleent in the list
+Elemento *insereL(Lista *l, Elemento *val)
+{
 	EloL *aux = malloc(sizeof(EloL));
 	EloL *atual = l->Lista;
 
@@ -60,8 +58,8 @@ Elemento *insereL(Lista *l, Elemento *val){
 	return aux->valor;
 }
 
-int insereElol(Lista *l, EloL *val){
-	// Insert whole Elol in the list, if everything goes ok, return 1 and 0 otherwise
+int insereElol(Lista *l, EloL *val)
+{
 	EloL *atual = l->Lista;
 
 	if (atual == NULL){
@@ -104,7 +102,6 @@ Elemento *buscaL(Lista *l, char *n)
 
 EloL *buscaElol(Lista *l, char *tag)
 {
-	// Finds and return pointer to a elo of the list
 	EloL *atual = l->Lista;
 
 	while(atual != NULL){
@@ -147,7 +144,6 @@ Elemento *retiraL(Lista *l, Elemento *val)
 
 int retiraElol(Lista *l, char *tag)
 {
-	// Given a tag, removes its elo from the list
 	EloL *atual = l->Lista;
 	EloL *anterior;
 

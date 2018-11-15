@@ -1,0 +1,11 @@
+fazer um enum para as direções (NORTE,SUL,LESTE,OESTE) e apremder como isso funciona
+
+adicionar palavras ao dicionario / definir dicionario
+
+criar ações.c e .h, e colocar essa fuções na lsita
+
+criar um novo testador / Update changes in the testador.c (make it works with the changes in the list)
+
+Create lists in the character, rooms and future objects
+
+Use insreElol, buscaEle
