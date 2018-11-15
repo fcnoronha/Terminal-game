@@ -1,6 +1,6 @@
 # Listing projects files. ONLY UPDATE HERE while changing stuff.
-OBJECTS = hashTable.o ListaValores.o 
-HEADERS = hashTable.h Estruturas.h ListaValores.h game.h
+OBJECTS = hashTable.o ListaValores.o acoes.o
+HEADERS = hashTable.h Estruturas.h ListaValores.h game.h acoes.h
 EXES = testador3000 game
 
 # Setting default compiler and flags

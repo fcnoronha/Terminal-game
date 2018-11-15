@@ -166,8 +166,9 @@ int insereSin(TabSim *t, char *n, char *sin)
 	// Criando um Elo com as informaçoes passadas
 	Elo *aux = malloc(sizeof(Elo));
 	aux->chave = h;
-	aux->valor = val;
+	aux->valor = NULL;
 	aux->nome = n;
+	aux->sinonimo = sin;
 	aux->prox = NULL;
 
 	// Pego a lista que vai conter todos os elos dql valor
@@ -195,7 +196,7 @@ char *buscaSin(TabSim *t, char *n)
 	int h = hashFun(n, t->tamanho);
 
 	Elo *sec = t->Tabela[h]; // Pegando a lista linkada dql valor
-	if (sec == NULL) return NULL; // Caso nao tenha elos com o valor
+	if (sec == NULL) return '\0'; // Caso nao tenha elos com o valor
 
 	while (sec->prox != NULL && strcmp(n, sec->nome) != 0){
 		sec = sec->prox; // Compara ate achar na lista encadeada
@@ -203,7 +204,7 @@ char *buscaSin(TabSim *t, char *n)
 
 	// Caso eu tenha chegado noq eu quero
 	if (strcmp(n, sec->nome) == 0)
-		return sec->valor;
+		return sec->sinonimo;
 
-	return NULL; // Nao achei
+	return '\0'; // Nao achei
 }

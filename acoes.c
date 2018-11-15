@@ -7,9 +7,7 @@
 /*
  This module contais all the actions/functions that can be perfomed
  in the game. By definition they're all in the form:
-
-   int foo(personagem*, elemento*)
-
+   int foo(element, element)
  and returns 1 if sucess and 0 otherwise.
 */
 

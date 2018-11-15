@@ -40,11 +40,11 @@ int retiraS(TabSim*, char*);
 /*
  Insert a synonym in the hash table, relationating N with SIN
 */
-int insereSin(TabSim *t, char *n, char *sin)
+int insereSin(TabSim *t, char *n, char *sin);
 
 /*
  Search the synonym of a given sentence N.
 */
-char *buscaSin(TabSim *t, char *n)
+char *buscaSin(TabSim *t, char *n);
 
 # endif

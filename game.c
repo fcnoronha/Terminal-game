@@ -4,6 +4,7 @@
 
 #include"hashTable.h"
 #include"ListaValores.h"
+#include"acoes.h"
 
 // Defining global variables in order to make them acessible to every function
 
