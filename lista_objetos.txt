@@ -24,22 +24,32 @@ nome: banquete
 descricao: "Uma mesa imensa com milhares de pratos de comida diferentes e maravilhosos. Desde doces, salgados ou agridoces."
 localizacao: prazeres
 
-nome:  
-descricao:
-localizacao:
+nome: livro
+descricao: "Um livro enorme, mas não tanto a ponto de exceder o tamanho de um ser humano, com capa azul está diante de você."
+localizacao: racional
 
-nome:
-descricao:
-localizacao:
+nome: espinhos
+descricao: "Você sente algo pontudo e perfurante em suas mãos, como se fosse uma bola de agulhas. Isso te machuca."
+localizacao: medo
 
-nome:
-descricao:
-localizacao:
+nome: album
+descricao: "É o maior álbum de fotografias que você já viu."
+localizacao: memoria
 
-nome:
-descricao:
-localizacao:
+FUNCOES
 
-nome:
-descricao:
-localizacao:
+banquete:
+-pegar x ("Você pega a comida x e guarda consigo.")
+
+livro:
+-abrir ("Você abre o livro e percebe que não há nada escrito em nenhuma das páginas.")
+-escrever x ("Você encontra um lápis ao lado do livro e escreve x na primeira página.")
+
+
+espinhos:
+-soltar ("Você solta o objeto mas ele reaparece em suas mãos.")
+-quebrar ("Você tenta quebrá-lo, mas só se machuca mais, suas mãos agora estão sangrando.")
+
+album:
+-abrir ("Você observa que cada foto é uma de suas lembranças mais importantes e claras, sendo elas boas ou ruins, todas estão no álbum.")
+-pegar foto x ("Você pega a foto x e guarda consigo.")
