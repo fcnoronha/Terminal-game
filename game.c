@@ -153,8 +153,8 @@ void inicializa()
 
 	// 'identidade' room
 	identidade->nome = "Identidade";
-	identidade->curta = "Voce nao ve nada.";
-	identidade->longa = "Nao importa para onde voce olhe, nao ha paredes, nem portas, nem janelas.";
+	identidade->curta = "Você não vê nada.";
+	identidade->longa = "Não importa para onde você olhe, não há paredes, nem portas, nem janelas.";
 	identidade->ativo = true;
 	identidade->visitado = false;
 	identidade->funEspecificas = criaL();
@@ -174,8 +174,8 @@ void inicializa()
 	
 	// 'prazer' room
 	prazer->nome = "Prazer";
-	prazer->curta = "Tudo e vermelho.";
-	prazer->longa = "Ao seu redor nao ha outras cores alem de um vermelho cor de fogo.";
+	prazer->curta = "Tudo é vermelho.";
+	prazer->longa = "Ao seu redor não há outras cores além de um vermelho cor de fogo.";
 	prazer->ativo = true;
 	prazer->visitado = false;
 
@@ -200,8 +200,8 @@ void inicializa()
 	
 	// 'racional' room
 	racional->nome = "Racional";
-	racional->curta = "Azul e tudo que seus olhos conseguem captar.";
-	racional->longa = "Voce se ve imerso em um azul sem fim, que escorre por todas as direcoes do seu olhar.";
+	racional->curta = "Azul é tudo que seus olhos conseguem captar.";
+	racional->longa = "Você se vê imerso em um azul sem fim, que escorre por todas as direções do seu olhar.";
 	racional->ativo = true;
 	racional->visitado = false;
 
@@ -227,8 +227,8 @@ void inicializa()
 
 	// 'memoria' room
 	memoria->nome = "Memoria";
-	memoria->curta = "Verde e tudo que voce consegue ver.";
-	memoria->longa = "Voce ve uma luz verde iluminando tudo ao seu redor.";
+	memoria->curta = "Verde é tudo que você consegue ver.";
+	memoria->longa = "Você vê uma luz verde iluminando tudo ao seu redor.";
 	memoria->ativo = true;
 	memoria->visitado = false;
 
@@ -276,8 +276,8 @@ void inicializa()
 
 	// 'medo' room
 	medo->nome = "Medo";
-	medo->curta = "Esta tudo completamente escuro.";
-	medo->longa = "Nao ha luz alguma. Voce esta completamente no escuro.";
+	medo->curta = "Está tudo completamente escuro.";
+	medo->longa = "Não há luz alguma. Você está completamente no escuro.";
 	medo->ativo = false;
 	medo->visitado = false;
 
