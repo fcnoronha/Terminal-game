@@ -7,11 +7,9 @@
 Lista *criaL()
 {
 	Lista *l = malloc(sizeof(Lista));
-	if (l == NULL) return NULL; // If allocation went well
+	if (l == NULL) return NULL; // If allocation did not go well
 	l->tamanho = 0;
-	l->Lista = NULL; // O FELIPE E MUITO FODA, NAMORAL
-					 // AINDA POR CIMA, E GATO DEMAISSSS
-
+	l->Lista = NULL; 
 	return l;
 }
 
