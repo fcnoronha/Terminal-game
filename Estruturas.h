@@ -1,4 +1,4 @@
-# ifndef _Estruturas_h // Avoiding conflicts errors
+# ifndef _Estruturas_h // Avoiding conflict errors
 # define _Estruturas_h 
 
 // Declaring before, because there is a circular use
@@ -59,7 +59,7 @@ typedef struct l{
 
 // Creating a struct just for the character
 struct p {
-	char nome[20]; // Can ask in the game
+	char nome[20]; // ask in the game
 	Elemento *salaAtual;
 	Lista *mochila;
 	int visitadas;
