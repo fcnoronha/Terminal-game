@@ -34,58 +34,117 @@ Lista *funGlobais;
 /*
 
 		 EGO --  PRAZER	
+					^
 					|
-	MEMORIA	--	IDENTIDADE  --    RACIONAL
-				    |
-		|_______		   MEDO        ______|
+					v
+ MEMORIA  <--> IDENTIDADE <-->  RACIONAL
+		 		    ^
+		 		    |
+		|_______>  MEDO      <______|
 
 */
 
 
-void inicializa(){
+void inicializa()
+{
 
 	int flag = 0;
+	EloL *f; // Auxiliar pointer to define functions
+
+	// INITIALIZING POINTERS
+	banquete = malloc(sizeof(Elemento));
+	livro = malloc(sizeof(Elemento));
+	espinhos = malloc(sizeof(Elemento));
+	album = malloc(sizeof(Elemento));
+	identidade = malloc(sizeof(Elemento));
+	prazer = malloc(sizeof(Elemento));
+	racional = malloc(sizeof(Elemento));
+	memoria = malloc(sizeof(Elemento));
+	medo = malloc(sizeof(Elemento));
+	ego = malloc(sizeof(Elemento));
+
 
 	// INITIALIZING OBJECTS
 
 	// 'Banquete' object
-	banquete = malloc(sizeof(Elemento));
 	banquete->nome = "Um banquete.";
 	banquete->curta = "Uma mesa imensa com milhares de pratos de comida diferentes e maravilhosos. Desde doces, salgados ou agridoces.";
 	banquete->ativo = true;
-	// fun *açoes
+	banquete->funEspecificas = criaL();
+
+	f = malloc(sizeof(EloL));
+	f->tag = "pegar";
+	f->inst.fun = pegar;
+	f->prox = NULL;
+	flag += insereElol(banquete->funEspecificas, f);
+
 	// *animaçao
 	banquete->isLugar = false;
 	banquete->isCoisa = true;
 
 	// 'livro' object
-	livro = malloc(sizeof(Elemento));
 	livro->nome = "Um livro.";
 	livro->curta = "Um livro enorme, mas não tanto a ponto de exceder o tamanho de um ser humano, com capa azul está diante de você.";
 	livro->ativo = true;
-	livro->desc = '\0';
-	// fun *açoes
+	livro->desc = NULL;
+	livro->funEspecificas = criaL();
+
+	f = malloc(sizeof(EloL));
+	f->tag = "abrir";
+	f->inst.fun = abrir;
+	f->prox = NULL;
+	flag += insereElol(livro->funEspecificas, f);
+
+	f = malloc(sizeof(EloL));
+	f->tag = "escrever";
+	f->inst.fun = escrever;
+	f->prox = NULL;
+	flag += insereElol(livro->funEspecificas, f);
+
 	// *animaçao
 	livro->isLugar = false;
 	livro->isCoisa = true;
 
 	// 'espinhos' object
-	espinhos = malloc(sizeof(Elemento));
 	espinhos->nome = "Uns espinhos.";
 	espinhos->curta = "Você sente algo pontudo e perfurante em suas mãos, como se fosse uma bola de agulhas. Isso te machuca.";
 	espinhos->ativo = true;
-	// fun *açoes
+	espinhos->funEspecificas = criaL();
+
+	f = malloc(sizeof(EloL));
+	f->tag = "soltar";
+	f->inst.fun = soltar;
+	f->prox = NULL;
+	flag += insereElol(espinhos->funEspecificas, f);
+
+	f = malloc(sizeof(EloL));
+	f->tag = "quebrar";
+	f->inst.fun = quebrar;
+	f->prox = NULL;
+	flag += insereElol(espinhos->funEspecificas, f);
+
 	// *animaçao
 	espinhos->isLugar = false;
 	espinhos->isCoisa = true;
 
 	// 'album' object
-	album = malloc(sizeof(Elemento));
 	album->nome = "Um album.";
 	album->curta = "É o maior álbum de fotografias que você já viu.";
 	album->ativo = true;
-	album->desc = '\0';
-	// fun *açoes
+	album->desc = NULL;
+	album->funEspecificas = criaL();
+
+	f = malloc(sizeof(EloL));
+	f->tag = "abrir";
+	f->inst.fun = abrir;
+	f->prox = NULL;
+	flag += insereElol(album->funEspecificas, f);
+
+	f = malloc(sizeof(EloL));
+	f->tag = "pegar";
+	f->inst.fun = pegar;
+	f->prox = NULL;
+	flag += insereElol(album->funEspecificas, f);
 	// *animaçao
 	album->isLugar = false;
 	album->isCoisa = true;
@@ -93,13 +152,12 @@ void inicializa(){
 	// INITIALIZING ROOMS
 
 	// 'identidade' room
-	identidade = malloc(sizeof(Elemento));
 	identidade->nome = "Identidade";
 	identidade->curta = "Voce nao ve nada.";
 	identidade->longa = "Nao importa para onde voce olhe, nao ha paredes, nem portas, nem janelas.";
 	identidade->ativo = true;
 	identidade->visitado = false;
-
+	identidade->funEspecificas = criaL();
 	identidade->conteudo = criaL();
 
 	// fun *açoes -> lista de ponteiros para funçoes
@@ -111,21 +169,20 @@ void inicializa(){
 	identidade->atrida.saidas[NORTE] = prazer;
 	identidade->atrida.saidas[LESTE] = racional;
 	identidade->atrida.saidas[SUL] = NULL;
-	identidade->atrida.saidas[OESTE] = NULL;
+	identidade->atrida.saidas[OESTE] = memoria;
 
 	
 	// 'prazer' room
-	prazer = malloc(sizeof(Elemento));
 	prazer->nome = "Prazer";
 	prazer->curta = "Tudo e vermelho.";
 	prazer->longa = "Ao seu redor nao ha outras cores alem de um vermelho cor de fogo.";
 	prazer->ativo = true;
 	prazer->visitado = false;
 
-
+	prazer->funEspecificas = criaL();
 	prazer->conteudo = criaL();
 	EloL *b = malloc(sizeof(EloL));
-	b->tag = "Banquete";
+	b->tag = "banquete";
 	b->inst.obj = banquete;
 	b->prox = NULL;
 	flag += insereElol(prazer->conteudo, b);
@@ -142,16 +199,16 @@ void inicializa(){
 
 	
 	// 'racional' room
-	racional = malloc(sizeof(Elemento));
 	racional->nome = "Racional";
 	racional->curta = "Azul e tudo que seus olhos conseguem captar.";
 	racional->longa = "Voce se ve imerso em um azul sem fim, que escorre por todas as direcoes do seu olhar.";
 	racional->ativo = true;
 	racional->visitado = false;
 
+	racional->funEspecificas = criaL();
 	racional->conteudo = criaL();
 	EloL *l= malloc(sizeof(EloL));
-	l->tag = "Livro";
+	l->tag = "livro";
 	l->inst.obj = livro;
 	l->prox = NULL;
 	flag += insereElol(racional->conteudo, l);
@@ -169,16 +226,16 @@ void inicializa(){
 	
 
 	// 'memoria' room
-	memoria = malloc(sizeof(Elemento));
 	memoria->nome = "Memoria";
 	memoria->curta = "Verde e tudo que voce consegue ver.";
 	memoria->longa = "Voce ve uma luz verde iluminando tudo ao seu redor.";
 	memoria->ativo = true;
 	memoria->visitado = false;
 
+	memoria->funEspecificas = criaL();
 	memoria->conteudo = criaL();
 	EloL *a = malloc(sizeof(EloL));
-	a->tag = "Album";
+	a->tag = "album";
 	a->inst.obj = album;
 	a->prox = NULL;
 	flag += insereElol(memoria->conteudo, a);
@@ -196,13 +253,13 @@ void inicializa(){
 
 
 	// 'ego' room
-	ego = malloc(sizeof(Elemento));
 	ego->nome = "Ego";
 	ego->curta = "...";
 	ego->longa = "...";
 	ego->ativo = false;
 	ego->visitado = false;
 
+	ego->funEspecificas = criaL();
 	ego->conteudo = criaL();
 
 	// fun *açoes
@@ -218,13 +275,13 @@ void inicializa(){
 	
 
 	// 'medo' room
-	medo = malloc(sizeof(Elemento));
 	medo->nome = "Medo";
 	medo->curta = "Esta tudo completamente escuro.";
 	medo->longa = "Nao ha luz alguma. Voce esta completamente no escuro.";
 	medo->ativo = false;
 	medo->visitado = false;
 
+	medo->funEspecificas = criaL();
 	medo->conteudo = criaL();
 
 	EloL *e = malloc(sizeof(EloL));
@@ -246,18 +303,19 @@ void inicializa(){
 
 	// Initializing the character
 	pessoa = malloc(sizeof(Personagem));
-	pessoa->salaAtual = prazer;
+	pessoa->salaAtual = identidade;
 	pessoa->mochila = criaL();
+	pessoa->visitadas = 0;
 
 	// INITIALIZING DICTIONARY
 	dicionario = criaS(100);
-	// With this, if you search "agarra" in the dictionary, the returned
-	// value will be "pega".
-	flag += insereSin(dicionario, "agarra", "pega");
-	flag += insereSin(dicionario, "pega", "pega");
-	flag += insereSin(dicionario, "anda", "anda");
-	flag += insereSin(dicionario, "vai", "anda");
-	flag += insereSin(dicionario, "move", "anda");
+	// With this, if you search "agarrar" in the dictionary, the returned
+	// value will be "pegar".
+	flag += insereSin(dicionario, "agarrar", "pegar");
+	flag += insereSin(dicionario, "pegar", "pegar");
+	flag += insereSin(dicionario, "andar", "andar");
+	flag += insereSin(dicionario, "vai", "andar");
+	flag += insereSin(dicionario, "move", "andar");
 	flag += insereSin(dicionario, "soltar", "soltar");
 	flag += insereSin(dicionario, "deixar", "soltar");
 	flag += insereSin(dicionario, "escrever", "escrever");
@@ -265,21 +323,344 @@ void inicializa(){
 	flag += insereSin(dicionario, "destroi", "quebrar");
 	flag += insereSin(dicionario, "abrir", "abrir");
 	flag += insereSin(dicionario, "ler", "abrir");
+	flag += insereSin(dicionario, "info", "info");
+
+	flag += insereSin(dicionario, "banquete", "banquete");
+	flag += insereSin(dicionario, "livro", "livro");
+	flag += insereSin(dicionario, "espinhos", "espinhos");
+	flag += insereSin(dicionario, "album", "album");
+	flag += insereSin(dicionario, "norte", "NORTE");
+	flag += insereSin(dicionario, "sul", "SUL");
+	flag += insereSin(dicionario, "leste", "LESTE");
+	flag += insereSin(dicionario, "oeste", "OESTE");
+	flag += insereSin(dicionario, "frente", "NORTE");
+	flag += insereSin(dicionario, "tras", "SUL");
+	flag += insereSin(dicionario, "direita", "LESTE");
+	flag += insereSin(dicionario, "esquerda", "OESTE");
+	
 	// More synonyms must be defined...
 
 
 	// DEFINING GLOBAL FUNCTIONS
 	funGlobais = criaL();
-	EloL *f = malloc(sizeof(EloL));
-	f->tag = "anda";
-	f->inst.fun = anda;
+
+	f = malloc(sizeof(EloL));
+	f->tag = "andar";
+	f->inst.fun = andar;
 	f->prox = NULL;
 	flag += insereElol(funGlobais, f);
+
+	visitaSala(pessoa);
+}
+
+void destroier()
+{
+
+	free(identidade->atrida.saidas);
+	destroiL(identidade->conteudo);
+	destroiL(identidade->funEspecificas);
+	free(identidade); 
+	free(prazer->atrida.saidas);
+	destroiL(prazer->conteudo);
+	destroiL(prazer->funEspecificas);
+	free(prazer);
+	free(racional->atrida.saidas);
+	destroiL(racional->conteudo);
+	destroiL(racional->funEspecificas);
+	free(racional);
+	free(memoria->atrida.saidas);
+	destroiL(memoria->conteudo);
+	destroiL(memoria->funEspecificas);
+	free(memoria);
+	free(medo->atrida.saidas);
+	destroiL(medo->conteudo);
+	destroiL(medo->funEspecificas);
+	free(medo);
+	free(ego->atrida.saidas);
+	destroiL(ego->conteudo);
+	destroiL(ego->funEspecificas);
+	free(ego);
+
+	destroiL(banquete->funEspecificas);
+	free(banquete);
+	destroiL(livro->funEspecificas);
+	free(livro);
+	destroiL(espinhos->funEspecificas);
+	free(espinhos);
+	destroiL(album->funEspecificas);
+	free(album);
+
+	destroiL(pessoa->mochila);
+	free(pessoa);
+
+	destroiS(dicionario);
+
+	destroiL(funGlobais);
+}
+
+void finalizaJogo()
+{
+	printf("Parece que as coisas estão mais claras agora\n");
+	destroier();
+}
+
+void mudaAtivo()
+{
+	if (pessoa->visitadas > 3)
+		medo->ativo = true;
+	if (pessoa->salaAtual == identidade && pessoa->visitadas == 5)
+		finalizaJogo();
+}
+
+FPTR buscaFun(char *verbo, char *objeto)
+{
+	verbo = buscaSin(dicionario, verbo);
+	objeto = buscaSin(dicionario, objeto);
+
+	if (verbo == NULL)
+		return NULL;
+
+	// View in the objects of the room
+	EloL *bus = buscaElol(pessoa->salaAtual->conteudo, objeto);
+	if (bus != NULL){
+		bus = buscaElol(bus->inst.obj->funEspecificas, verbo);
+	}
+
+	if (bus != NULL)
+		return bus->inst.fun;
+
+
+	// View in the functions of the room
+	bus = buscaElol(pessoa->salaAtual->funEspecificas, verbo);
+	if (bus != NULL)
+		return bus->inst.fun;
+
+	// View in general functions
+	bus = buscaElol(funGlobais, verbo);
+	if (bus != NULL)
+		return bus->inst.fun;
+
+	// Didn't find anything
+	return NULL;
+}
+
+dir charToDir(char *x)
+{	
+	if (strcmp("NORTE", x) == 0)
+		return NORTE;
+	if (strcmp("SUL", x) == 0)
+		return SUL;
+	if (strcmp("OESTE", x) == 0)
+		return OESTE;
+	if (strcmp("LESTE", x) == 0)
+		return LESTE;
+
+	return NORTE; // Default
+}
+
+void testador6000()
+{
+	printf("sinonimo de %s : %s\n", "agarrar", buscaSin(dicionario, "agarrar"));
+	printf("sinonimo de %s : %s\n", "vai", buscaSin(dicionario, "vai"));
+	printf("sinonimo de %s : %s\n", "deixar", buscaSin(dicionario, "deixar"));
+	printf("sinonimo de %s : %s\n", "banquete", buscaSin(dicionario, "banquete"));
+	printf("sinonimo de %s : %s\n", "norte", buscaSin(dicionario, "norte"));
+	printf("sinonimo de %s : %s\n", "frente", buscaSin(dicionario, "frente"));
+	printf("sinonimo de %s : %s\n", "info", buscaSin(dicionario, "info"));
+	printf("sinonimo de %s : %s\n", "ler", buscaSin(dicionario, "ler"));
+
+	int flag, cont = 1;
+
+	printf("\n Ação: %d\n", cont++);
+
+	FPTR doing = buscaFun("andar", "sul");
+	if (doing == NULL) printf("Não achei\n");
+
+	dir direcao = charToDir(buscaSin(dicionario, "sul"));
+
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// I'm in the identidade room
+
+
+	printf("\n Ação: %d\n", cont++);
+	
+	direcao = charToDir(buscaSin(dicionario, "frente"));
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// I'm in the prazer room
+
+
+	printf("\n Ação: %d\n", cont++);
+
+    doing = buscaFun("pegar", "banquete");
+	if (doing == NULL) printf("Não achei\n");
+
+	flag = doing(pessoa, banquete);
+	if (flag) printf("PEGUEI!\n");
+	else printf("Não peguei\n");
+	// Put 'banquete' in my bag
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("andar", "sul");
+	if (doing == NULL) printf("Não achei\n");
+
+	direcao = charToDir(buscaSin(dicionario, "sul"));
+
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// I'm in the identidade room
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	direcao = charToDir(buscaSin(dicionario, "leste"));
+
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// I'm in the 'racional' room
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("pegar", "livro");
+	if (doing == NULL) printf("Não achei\n");
+
+ 	doing = buscaFun("abrir", "livro");
+	if (doing == NULL) printf("Não achei\n");
+	
+	flag = doing(pessoa, livro);
+	// Opening the 'livro'
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("escrever", "livro");
+	if (doing == NULL) printf("Não achei\n");
+	flag = doing(pessoa, livro);
+	// Writing in 'livro'
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("abrir", "livro");
+	if (doing == NULL) printf("Não achei\n");
+
+	flag = doing(pessoa, livro);
+	// Opening the 'livro'
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("andar", "sul");
+	if (doing == NULL) printf("Não achei\n");
+
+	direcao = charToDir(buscaSin(dicionario, "sul"));
+
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// Tryed to walk south
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("andar", "esquerda");
+	if (doing == NULL) printf("Não achei\n");
+
+	direcao = charToDir(buscaSin(dicionario, "esquerda"));
+
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// I'm in the 'identidade'room
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("andar", "esquerda");
+	if (doing == NULL) printf("Não achei\n");
+
+	direcao = charToDir(buscaSin(dicionario, "esquerda"));
+
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// I'm in the 'memoria' room
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("abrir", "album");
+	if (doing == NULL) printf("Não achei\n");
+
+	flag = doing(pessoa, album);
+	// Reading 'album'
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("andar", "sul");
+	if (doing == NULL) printf("Não achei\n");
+
+	direcao = charToDir(buscaSin(dicionario, "sul"));
+
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// I'm in the 'medo' room
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("soltar", "espinhos");
+	if (doing == NULL) printf("Não achei\n");
+
+	flag = doing(pessoa, espinhos);
+	// Tryed to get loose
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("quebrar", "espinhos");
+	if (doing == NULL) printf("Não achei\n");
+
+	flag = doing(pessoa, espinhos);
+	// Tryed to break
+
+
+	printf("\n Ação: %d\n", cont++);
+
+	doing = buscaFun("andar", "frente");
+	if (doing == NULL) printf("Não achei\n");
+
+	direcao = charToDir(buscaSin(dicionario, "frente"));
+
+	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
+	if (flag == 1) printf("Mudei de sala\n");
+	else if (flag == 2) printf("Ainda não posso entrar\n");
+	else if (flag == 0) printf("Não existe sala nesta direção\n");
+	// I'm in the 'identidade' room
 }
 
 int main(){
 	inicializa();
-
-	visitaSala(pessoa);
 	
+	testador6000();
+
+	destroier();	
 }

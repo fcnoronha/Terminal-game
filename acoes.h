@@ -24,13 +24,13 @@ void visitaSala(Personagem*);
 /*
  Move character to given room, considering if its possible
 */
-int anda(Personagem *p, Elemento *sala);
+int andar(Personagem *p, Elemento *sala);
 
 /*
  Receives an object 'e' and put it in the mochila array, representing
  the bag of the character and removes it from the room.
 */
-int pega(Personagem *p, Elemento *e);
+int pegar(Personagem *p, Elemento *e);
 
 /*
  Reads 'desc' of an object

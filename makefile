@@ -1,19 +1,19 @@
 # Listing projects files. ONLY UPDATE HERE while changing stuff.
-OBJECTS = hashTable.o ListaValores.o acoes.o
+OBJECTS = hashTable.o ListaValores.o game.o acoes.o 
 HEADERS = hashTable.h Estruturas.h ListaValores.h game.h acoes.h
-EXES = testador3000 game
+EXES = testador game
 
 # Setting default compiler and flags
 CC = gcc
 CFLAGS = -Wall 	
 
 # Compile file to test and verify the code.
-testador: $(OBJECTS) testador3000.o
-	$(CC) $(CFLAGS) $(OBJECTS) testador3000.o -o testador3000 
+testador: testador3000.o ListaValores.o hashTable.o
+	$(CC) $(CFLAGS) testador3000.o ListaValores.o hashTable.o -o testador 
 
 # Compile the game itself.
-game: $(OBJECTS) game.o
-	$(CC) $(CFLAGS) $(OBJECTS) game.o -o game 
+game: $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o game 
 
 # Compiles all objects files on demand.
 %.o : %.c $(HEADERS)
@@ -23,6 +23,6 @@ game: $(OBJECTS) game.o
 
 # Phony clean target. Run after pushing to github.
 clean:
-	@rm -f all $(OBJECTS) $(EXES) testador3000.o game.o
+	@rm -f all $(OBJECTS) $(EXES) testador3000.o
 
 # Use like this on terminal: make testador or make clean

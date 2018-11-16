@@ -5,6 +5,7 @@
 #include"acoes.h"
 #include"hashTable.h"
 #include"ListaValores.h"
+#include"game.h"
 
 /*
  This module contais all the actions/functions that can be perfomed
@@ -34,15 +35,22 @@ void visitaSala(Personagem *p)
 		p->salaAtual->visitado = true;
 		printf("%s\n", p->salaAtual->longa);
 
+		p->visitadas++;
 		imprimeObjetos(p->salaAtual);
 	}
 	else {
 		printf("%s\n", p->salaAtual->curta);
 	}
+
+	mudaAtivo();
 }
 
-int anda(Personagem *p, Elemento *sala)
+int andar(Personagem *p, Elemento *sala)
 {
+	mudaAtivo();
+
+	if (sala == NULL) return 0;
+
 	if (sala->isLugar && sala->ativo){
 		p->salaAtual = sala;
 		visitaSala(p);
@@ -54,8 +62,9 @@ int anda(Personagem *p, Elemento *sala)
 	return 0; // Is not room
 }
 
-int pega(Personagem *p, Elemento *e)
+int pegar(Personagem *p, Elemento *e)
 {
+	printf("Você guardou %s na mochila\n", e->nome);
 	EloL *s = buscaEle(p->salaAtual->conteudo, e);
 	int flag = insereElol(p->mochila, s);
 	flag = retiraElol(p->salaAtual->conteudo, s->tag);
@@ -66,8 +75,8 @@ int pega(Personagem *p, Elemento *e)
 
 int abrir(Personagem *nada, Elemento *l)
 {
-	if (strcmp(l->desc,"\0") == 0)
-		printf("Olha só, não tem nada aqui.\n");
+	if (l->desc == NULL)
+		printf("Você abre o livro e percebe que não há nada escrito em nenhuma das páginas.\n");
 	else
 		printf("%s\n", l->desc);
 	return 1;
@@ -75,23 +84,23 @@ int abrir(Personagem *nada, Elemento *l)
 
 int escrever(Personagem *nada, Elemento *l)
 {
-	printf("O que você quer escrever aqui?\n");
-	char x[90];
-	scanf("%s", x);
-	l->desc = x;
+	printf("Você encontra um lápis ao lado do livro e escreve algo na primeira página.\n");
+	l->desc = malloc(100*sizeof(char));
+	// scanf("%s", l->desc);
+	fgets(l->desc, 100, stdin);
 	return 1;
 }
 
 int soltar(Personagem *nada, Elemento *o)
 {
-	printf("Aii, sai da minha mão... \nAhhhh apareceu de novo na minha mão!\n");
+	printf("Você solta o objeto mas ele reaparece em suas mãos.\n");
 	printf("%s\n", o->curta);
 	return 1;
 }
 
 int quebrar(Personagem *nada, Elemento *o)
 {
-	printf("Você é muito burro... Tentando quebrar espinhos você só se machuca mais.\n");
+	printf("Você tenta quebrá-lo, mas só se machuca mais, suas mãos agora estão sangrando.\n");
 	return 1;
 }
 

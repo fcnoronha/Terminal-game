@@ -5,3 +5,5 @@ Projeto desenvolvido para a disciplina de MAC216
   A história acontece em um mundo virtual composto de lugares interligados por passagens, transferências mágicas, teletransporte, etc. Neste mundo existem vários objetos (virtuais) espalhados e que podem interagir com o aventureiro de diversas formas.
 
   Para jogar, basta digitar  ``` make game && ./game ``` no terminal. 
+
+  Duvidas gerais podem ser esclarecidas no arquivo ``` relatorio.txt ``` ou nos aquivos com extensão ``` .h ```.

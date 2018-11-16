@@ -62,6 +62,7 @@ struct p {
 	char nome[20]; // Can ask in the game
 	Elemento *salaAtual;
 	Lista *mochila;
+	int visitadas;
 };
 
 struct ele{
@@ -72,12 +73,7 @@ struct ele{
 	boolean ativo;
 	boolean visitado;
 	Lista *conteudo;
-	/*
-	fun *açoes -> lista de ponteiros para funçoes
-	lista do genero: 
-		typedef Elemento (* FPTR ) ( int ) ;
-		FPTR *açoess
-	*/
+	Lista *funEspecificas;
 	//?? *animaçao -> ponteiro para funçao que ira fazer uma animaçao
 	boolean isLugar;
 	boolean isCoisa;

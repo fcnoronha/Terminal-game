@@ -20,7 +20,7 @@ void destroiL(Lista *l)
 	EloL *atual, *aux;
 	atual = l->Lista; 
 
-	while(atual->prox!= NULL){ // Goes until the end of the list
+	while(atual != NULL){ // Goes until the end of the list
 
 		aux = atual->prox; // Keeping track of the list
 		free(atual->valor);
@@ -28,7 +28,6 @@ void destroiL(Lista *l)
 		atual = aux;
 	}
 
-	free(l->Lista);
 	free(l);
 }
 
@@ -105,7 +104,7 @@ EloL *buscaElol(Lista *l, char *tag)
 	EloL *atual = l->Lista;
 
 	while(atual != NULL){
-		if (strcmp(atual->info, tag) == 0)		
+		if (strcmp(atual->tag, tag) == 0)		
 			return atual;
 		
 		atual = atual->prox;
@@ -165,7 +164,7 @@ int retiraElol(Lista *l, char *tag)
 
 	if (atual == NULL) return 0; // There is nothing on the list
 	l->tamanho--;
-	if (strcmp(atual->info, tag) == 0){
+	if (strcmp(atual->tag, tag) == 0){
 		l->Lista = atual->prox;
 
 		// Doens't free because this elo may go to another list

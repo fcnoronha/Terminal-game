@@ -4,13 +4,7 @@
 
 #include"hashTable.h"
 #include"ListaValores.h"
-//#include "Estruturas.h"
 
-/*
-Maneira de se copilar:
-
-make all
-*/
 
 void testaHashTable(){
 
