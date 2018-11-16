@@ -1,4 +1,4 @@
-# ifndef _ListaValores_h // Avoiding conflicts errors
+# ifndef _ListaValores_h // Avoiding conflict errors
 # define _ListaValores_h 
 
 #include "Estruturas.h"
