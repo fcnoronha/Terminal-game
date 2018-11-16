@@ -9,35 +9,35 @@ Gustavo Mota Bastos - 10284389
 
     Hash Table - Tabela de Símbolos
 
-A tabela de símbolos esta implementada no arquivo hashTable.c, junto com o cabeçalho
-header.h (onde todas as funçoes e structs sao prototipadas). Sua funçao e associar
+A tabela de símbolos está implementada no arquivo hashTable.c, junto com o cabeçalho
+header.h (onde todas as funções e structs são prototipadas). Sua função é associar
 um termo com um elemento, de tal forma, que a busca possa ser feita de maneira
-rapida e eficiente. Para isso, para cada termo e difinido um valor hash, todavia,
+rápida e eficiente. Para isso, para cada termo e difinido um valor hash, todavia,
 esse valor pode se repitir entre termos, de maneira a evitar este problema, e criada
 uma lista linkada para cada valor hash, o que, mesmo criando mais espaço, continua a
-dar eficiencia ao processo de busca. Agora, vamos passar funçao por funçao, explicando
+dar eficiencia ao processo de busca. Agora, vamos passar função por função, explicando
 seu respectivo funcionamento:
 
 - int hashFun(char *n, int tam): recebe um termo e seu respetivo tamanho, retornando
-assim o seu valor hash, que e calculado como sendo a soma dos valores ASCII de cada
-letra, devidido pelo valor do ultimo caractere;
+assim o seu valor hash, que é calculado como sendo a soma dos valores ASCII de cada
+letra, dividido pelo valor do áltimo caractere;
 
-- TabSim *criaS(int tam): cria uma tabela hash com o tamanho passado como parametro.
-Retorna NULL caso tenha ocorrido algum erro na alocaçao de memoria;
+- TabSim *criaS(int tam): cria uma tabela hash com o tamanho passado como parâmetro.
+Retorna NULL caso tenha ocorrido algum erro na alocação de memória;
 
-- void destroiS(TabSim *t): recebe o ponteiro para uma tabela de simbolos e a destroi,
-liberando assim, espaço na memoria;
+- void destroiS(TabSim *t): recebe o ponteiro para uma tabela de símbolos e a destrói,
+liberando assim, espaço na memória;
 
-- int insereS(TabSim *t, char *n, Elemento *val): funçao que recebe uma tabela, e
-insere nesta um termo n, que por sua vez, e assossiado a um elemento val. Representa
-o cerne da hashTable. Retornando 1 caso a inserçao seja bem sucessida e 0 caso contrario;
+- int insereS(TabSim *t, char *n, Elemento *val): função que recebe uma tabela, e
+insere nela um termo n, que por sua vez, é assossiado a um elemento val. Representa
+o cerne da hashTable. Retornando 1 caso a inserção seja bem sucedida e 0 caso contrário;
 
-- Elemento *buscaS(TabSim *t, char *n): funçao que busca um termo n na tabela e retorna
-o Elemento a ele associado. Retorna NULL caso a busca nao tenha sido bem sucedida;
+- Elemento *buscaS(TabSim *t, char *n): função que busca um termo n na tabela e retorna
+o Elemento a ele associado. Retorna NULL caso a busca não tenha sido bem sucedida;
 
-- int retiraS(TabSim *t, char *n): funçao que recebe um termo n e o retira na tabela,
-tomando cuidado com a estrutura da lista linkada, religando 'nos' separados. Retorna
-0 caso nao consiga retirar o dado elemento e 1 caso o processo seja bem sucedido.
+- int retiraS(TabSim *t, char *n): função que recebe um termo n e o retira na tabela,
+tomando cuidado com a estrutura da lista linkada, religando 'nós' separados. Retorna
+0 caso não consiga retirar o dado elemento e 1 caso o processo seja bem sucedido.
 
 
 	Lista - lista ligada de valores
@@ -66,24 +66,24 @@ Para os testes, foi criado o arquivo testador3000.c que pode ser copilado com 'm
 
 ---------------------- PARTE 2 --------------------------------------------
 
-Resumo da estoria:
+Resumo da história:
 
 O jogador acompanhará nosso personagem que busca o autoconhecimento, a construção de sua própria identidade dentro da sua mente. Desse modo, no início do jogo ele estará na sala Identidade, que está inicialmente vazia. Após um pequeno diálogo com o narrador, o jogador será direcionado para outras salas, Prazeres, Racional, Memória e por fim, Medo. Esta será a última sala a ser visitada pois a ideia é que a personagem utilize os recursos adquiridos nas outras salas para conseguir vencer seus medos, que serão representados por um emaranhado de espinhos (um objeto do jogo). Caso consiga vencê-los, o jogador deve voltar à sala original e depositar os objetos que recolheu durante a jornada e que representam partes de sua identidade, com isso ela estaria completa.
 
 Especificações:
 
-	Esta parte do projeto, contem, tambem, o arquivo game.c, que pode ser copilado e rodado usando 'make game && ./game'. A definição de todas as funções podem ser encontradas nos aquivos headers contidos no diretorio.
+	Esta parte do projeto, contém, também, o arquivo game.c, que pode ser compilado e rodado usando 'make game && ./game'. A definição de todas as funções podem ser encontradas nos aquivos headers contidos no diretório.
 
-	O arquivo acoes.c contem as açõs basicas que a personagem pode tomar durante o jogo, sendo que estas, estão representadas na forma de funções. 
-	Poucas mudanças foram necessarias para que as implementações da parte 1 do projeto atendessem as necessidades da segunda parte. Seus respectivos usos ficaram definidos como:
-	 - HashTable := É usada como um dicinario, relacionando cadeias de char com outras cadeias de char;
-	 - ListaValores := É usada tanto para armazenar objetos em uma sala, quanto para armazenar as funções especificas de uma sala/objeto.
+	O arquivo acoes.c contém as ações básicas que a personagem pode tomar durante o jogo, sendo que estas, estão representadas na forma de funções. 
+	Poucas mudanças foram necessárias para que as implementações da parte 1 do projeto atendessem as necessidades da segunda parte. Seus respectivos usos ficaram definidos como:
+	 - HashTable := É usada como um dicionário, relacionando cadeias de char com outras cadeias de char;
+	 - ListaValores := É usada tanto para armazenar objetos em uma sala, quanto para armazenar as funções específicas de uma sala/objeto.
 
-	O arquivo game.c contem o cerne do jogo. Na sua estrutura, são definidas, de antemão, variaveis globais, as quais serão utilizadas por todas as suas funções. A seguir esta a descrição de cada estapa de seu funcionamento:
-	 - inicializa(): Inicializa o mundo no qual o jogo acontece, atribuindo relações entre salas/objetos/funções. Nela, tambem é a alocada toda a memoria necessaria para guardar as informalções de diferentes structs;
-	 - destroier(): Função que libera toda a memoria alocada na parte anterior;
+	O arquivo game.c contém o cerne do jogo. Na sua estrutura, são definidas, de antemão, variáveis globais que serão utilizadas por todas as funções. A seguir está a descrição de cada etapa de seu funcionamento:
+	 - inicializa(): Inicializa o mundo no qual o jogo acontece, atribuindo relações entre salas/objetos/funções. Nela, tambem é alocada toda a memória necessária para guardar as informações de diferentes structs;
+	 - destroier(): Função que libera toda a memória alocada na parte anterior;
 	 - charToDir(): Função que recebe um termo e retorna uma direção;
-	 - mudaAtivo(): Muda as relações existentes entre personagem e salas de acordo com o numero de salas ja visitadas;
+	 - mudaAtivo(): Muda as relações existentes entre personagem e salas de acordo com o número de salas já visitadas;
 	 - finalizaJogo(): Nome autoexplicativo;
-	 - buscaFun(): Uma das principais funções. Ela realiza a busca de uma função dentro das listas do jogo, seguindo a hieraquia de busca objeto > sala > geral, ou seja, a busca de uma função é realizada primeiro em um objeto e por ultimo na lista geral de funções. Esta função trabalha com uma cadeia de char 'verbo' e outra 'objeto'. A cadeia 'objeto' é usada para buscar um objeto em uma sala, filtrando assim, a busca por uma função. De forma geral, a busca de uma função é realizada atravez da comparação de uma tag relacionada aquela função e o sinonimo do dicionario associado ao verbo, de forma que, se um é igual ao outro, encontramos nossa função. Esta parte ficara mais clara na etapa 3 do projeto, com uso uso de interpretadores lexicos;
-	 - testador6000(): Aqui, a forma de testar as implementações foi realizada de maneira diferente da parte 1. Agora,  os testes são realizados dentro do proprio arquivo game.c, de forma que, para que se possa jogar o jogo apos os testes seria necessaria a seguinte ordem the funções inicializa()>testador6000()>destroier()>inicializa(). Nesta função, todas as funções implementadas nesta parte são testadas, garantindo assim, sua eficacia.
+	 - buscaFun(): Uma das principais funções. Ela realiza a busca de uma função dentro das listas do jogo, seguindo a hieraquia de busca objeto > sala > geral, ou seja, a busca de uma função é realizada primeiro em um objeto e por último na lista geral de funções. Esta função trabalha com uma cadeia de char 'verbo' e outra 'objeto'. A cadeia 'objeto' é usada para buscar um objeto em uma sala, filtrando assim, a busca por uma função. De forma geral, a busca de uma função é realizada atravéz da comparação de uma tag relacionada àquela função e o sinonimo do dicionário associado ao verbo, de forma que, se um é igual ao outro, encontramos nossa função. Esta parte ficará mais clara na etapa 3 do projeto, com uso uso de interpretadores léxicos;
+	 - testador6000(): Aqui, a forma de testar as implementações foi realizada de maneira diferente da parte 1. Agora,  os testes são realizados dentro do proprio arquivo game.c, de forma que, para que se possa jogar o jogo após os testes seria necessária a seguinte ordem the funções inicializa()>testador6000()>destroier()>inicializa(). Aqui, todas as funções implementadas nesta parte são testadas, garantindo assim, sua eficácia.
