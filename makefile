@@ -1,20 +1,20 @@
 # Listing projects files. ONLY UPDATE HERE while changing stuff.
-OBJECTS = hashTable.o ListaValores.o game.o acoes.o 
+OBJECTS = parser.o scanner.o hashTable.o ListaValores.o game.o acoes.o 
 HEADERS = hashTable.h Estruturas.h ListaValores.h game.h acoes.h
 EXES = testador game
 
 # Setting default compiler and flags
 LOADLIBES= -lfl -lreadline
 CC = gcc
-CFLAGS = -Wall 	
+CFLAGS = -Wall -g
 
 # Compile file to test and verify the code.
-testador: testador3000.o ListaValores.o hashTable.o parser.o scanner.o
-	$(CC) $(CFLAGS) testador3000.o ListaValores.o hashTable.o -o testador 
+testador: parser.o scanner.o testador3000.o ListaValores.o hashTable.o 
+	$(CC) $(CFLAGS) testador3000.o ListaValores.o hashTable.o -o testador $(LOADLIBES)
 
 # Compile the game itself.
-game: $(OBJECTS) parser.o scanner.o
-	$(CC) $(CFLAGS) $(OBJECTS) -o game 
+game: $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o game $(LOADLIBES)
 
 parser.c : parser.y
 
@@ -22,7 +22,7 @@ scanner.o: scanner.l parser.c
 
 # Compiles all objects files on demand.
 %.o : %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $< $(LOADLIBES)
 
 %.c: %.y
 	bison $<
@@ -32,6 +32,6 @@ scanner.o: scanner.l parser.c
 
 # Phony clean target. Run after pushing to github.
 clean:
-	@rm -f all $(OBJECTS) $(EXES) testador3000.o
+	@rm -f all $(OBJECTS) $(EXES) testador3000.o parser.tab.h parser.c
 
 # Use like this on terminal: make testador or make clean

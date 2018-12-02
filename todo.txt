@@ -1,7 +1,12 @@
-- ajustar parser e scanner no makefile e pa
-
 - criar uma função buscaFun().Vai receber o objeto da frase, e retornar salaAtual->atraída.saida[Dir] se a direção com aql 
 objetivo não for NULL (fazer chatodir retornar NULL se não se encaixa em nada) ou retorna um objeto se encontrar ele na sala.
 (Criar um check em todas as funções pra ver se o objeto que ela recebeu não é NULL)
 
 - criar uma função com switch para tratar cada tipo de erro. Definir códigos de erro
+
+- Ver erro na função que testa quando escreve 'teste'
+
+- Escrever lista de ações possiveis
+
+- Fazer a parte que le alpha do scanner descobrir se aquilo é uma ação ou obejeto e retronar seu respectivo token
+	fazer com que a primeira coisa lida na frase sem ser uma ligação seja um verbo e a segunda ser um objeto

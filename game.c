@@ -5,7 +5,10 @@
 #include"hashTable.h"
 #include"ListaValores.h"
 #include"acoes.h"
-#include "parser.tab.h"
+#include"parser.tab.h"
+
+// For lexical and grammar interpretation
+extern int yyparse();
 
 // Defining global variables in order to make them acessible to every function
 
@@ -365,12 +368,12 @@ void destroier()
 	destroiL(prazer->conteudo);
 	destroiL(prazer->funEspecificas);
 	free(prazer);
-	free(racional->atrida.saidas);
+	free(racional->atrida.saidas); 
 	destroiL(racional->conteudo);
 	destroiL(racional->funEspecificas);
 	free(racional);
 	free(memoria->atrida.saidas);
-	destroiL(memoria->conteudo);
+	destroiL(memoria->conteudo); 
 	destroiL(memoria->funEspecificas);
 	free(memoria);
 	free(medo->atrida.saidas);
@@ -381,6 +384,7 @@ void destroier()
 	destroiL(ego->conteudo);
 	destroiL(ego->funEspecificas);
 	free(ego);
+
 
 	destroiL(banquete->funEspecificas);
 	free(banquete);
@@ -461,6 +465,11 @@ dir charToDir(char *x)
 
 void testador6000()
 {
+	printf("\n\n INCIALIZANDO TESTE \n\n");
+
+	destroier();
+	inicializa();
+
 	printf("sinonimo de %s : %s\n", "agarrar", buscaSin(dicionario, "agarrar"));
 	printf("sinonimo de %s : %s\n", "vai", buscaSin(dicionario, "vai"));
 	printf("sinonimo de %s : %s\n", "deixar", buscaSin(dicionario, "deixar"));
@@ -656,15 +665,28 @@ void testador6000()
 	else if (flag == 2) printf("Ainda não posso entrar\n");
 	else if (flag == 0) printf("Não existe sala nesta direção\n");
 	// I'm in the 'identidade' room
+
+	destroier();
+	inicializa();
+
+	printf("\n\n TESTE FINALIZADO \n\n");
 }
 
 int main(){
-	
-	printf("Você não sabe onde está.\nDe todos os lados o único sentimento que te consome é um vazio. Não há cores, odores, sabores, seus sentidos não captam nada.\nVocê percebe que essa confusão e indefinição são reflexos de quem você é, pois como este lugar, você não se conhece. \nVocê está no cerne de sua mente, sua IDENTIDADE. E irá começar uma jornada em busca de QUEM VOCÊ É.\n\n");
-	
-	inicializa();
-	
-	testador6000();
+	// Starting description
+	printf("\nVocê não sabe onde está.\nDe todos os lados o único sentimento que te consome é um vazio.\
+Não há cores, odores, sabores, seus sentidos não captam nada.\nVocê percebe que essa confusão e indefinição\
+ são reflexos de quem você é, pois como este lugar, você não se conhece. \nVocê está no cerne de sua mente, sua IDENTIDADE.\
+ E irá começar uma jornada em busca de QUEM VOCÊ É.\n\n");
+		
+	// Initializing games components
+	inicializa();	
 
-	destroier();	
+	// Running game
+	while (yyparse());
+
+	// Ending game
+	destroier();
+	return 0; 
+
 }

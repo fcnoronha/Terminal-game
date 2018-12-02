@@ -8,6 +8,8 @@
 
 #define YY_INPUT(buf,result,max_size) result = mygetinput(buf, max_size);
 
+int estado = 0;
+
 /* Function to substitute input */
 static int mygetinput(char *buf, int size) {
   char *line;
@@ -38,33 +40,41 @@ static int mygetinput(char *buf, int size) {
 
 %%
 
-(fim|Chega) { return FIM;}
-
-<<EOF>> { puts("Bye bye..."); return FIM; }
+(fim|chega|sair|tchau) { return FIM;}
 
 (help|ajuda|info) {return INFO;} 
 
 (testa|teste|test) {return TEST;}
 
-(N|Norte|NORTE) { return NORTE;}
-(S|Sul|SUL)     { return SUL;}
-(L|Leste|LESTE) { return LESTE;}
-(W|Oeste|OESTE) { return OESTE; /* W no lugar de O para evitar confusão com o artigo 'o'*/  } 
-(C|Cima|CIMA)   { return CIMA;}
-(B|Baixo|BAIXO) { return BAIXO;}
-
+para // Ignora as conjunções
 
 [ao]|uma?
 
 d[aoe]|em|n[ao]
 
-[[:alpha:]]+ {
+(pau) {
+  yylval.numero = 2;
+  return ACAO
+;}
 
-			  }
+(buc) {
+  yylval.str = "oi";
+  return OBJE
+;}
 
+[[:alpha:]]+ { 
+  if(estado == 0){
+    printf("verbo: %s\n", yytext);
+    estado++;
+  }
+  else {
+    printf("obj: %s\n", yytext);
+    estado = 0;
+  }
+
+return READ;}
 
 [ \t]+
 [\n;] {/* ';' também termina linhas */return EOL;}
 
 
-. {yylval.str = yytext; return DESC;}

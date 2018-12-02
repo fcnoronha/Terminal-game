@@ -85,9 +85,10 @@ int abrir(Personagem *nada, Elemento *l)
 int escrever(Personagem *nada, Elemento *l)
 {
 	printf("Você encontra um lápis ao lado do livro e escreve algo na primeira página.\n");
-	l->desc = malloc(100*sizeof(char));
+	l->desc = malloc(300*sizeof(char));
+	l->desc = "Eu estive aqui, porque uma historia não se conta sozinha";
+	printf("'%s'\n",l->desc);
 	// scanf("%s", l->desc);
-	fgets(l->desc, 100, stdin);
 	return 1;
 }
 
