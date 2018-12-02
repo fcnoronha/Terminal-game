@@ -1,5 +1,7 @@
-criar uma função buscaFun().Vai receber o objeto da frase, e retornar salaAtual->atraída.saida[Dir] se a direção com aql 
+- ajustar parser e scanner no makefile e pa
+
+- criar uma função buscaFun().Vai receber o objeto da frase, e retornar salaAtual->atraída.saida[Dir] se a direção com aql 
 objetivo não for NULL (fazer chatodir retornar NULL se não se encaixa em nada) ou retorna um objeto se encontrar ele na sala.
 (Criar um check em todas as funções pra ver se o objeto que ela recebeu não é NULL)
 
-criar uma função com switch para tratar cada tipo de erro. Definir códigos de erro
+- criar uma função com switch para tratar cada tipo de erro. Definir códigos de erro
