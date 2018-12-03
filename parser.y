@@ -26,7 +26,7 @@ input:
 	  EOL		{ printf("Zzzz...\n"); }
 	| cmd 
     | INFO {
-    	printf("Lista de ações possiveis: \n");
+    	printf("Lista de ações possiveis:  PEGAR <OBJETO>, ABRIR <OBJETO>, ESCREVER, SOLTAR <OBJETO>, QUEBRAR <OBJETO>, ANDAR <DIRECAO>\n");
     	// Escrever coisas aqui
    	} eol // 'eol' represents the end of command
     	
