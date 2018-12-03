@@ -462,7 +462,35 @@ dir charToDir(char *x)
 
 	return NORTE; // Default
 }
+FPTR buscaObj(char *objeto)
+{
+	objeto = buscaSin(dicionario, objeto);
+	Elemento objNaMochila;
+	dir ehDirecao;
 
+	if (objeto == NULL)
+		return NULL;
+
+	ehDirecao=charToDir(objeto);
+
+	if (ehDirecao != NULL) return ehDirecao;
+
+
+	objNaMochila = buscaL(p->mochila, objeto); // se o objeto estiver na mochila
+
+	if (objNaMochila != NULL) return objNaMochila;
+
+	// se o objeto estiver na sala
+	EloL *bus = buscaElol(pessoa->salaAtual->conteudo, objeto);
+	while (bus != NULL && strcmp(bus->info,objeto)==0){
+		EloL *bus = buscaElol(pessoa->salaAtual->conteudo, objeto);
+	}
+
+	if (bus == NULL) return NULL;
+
+	// Didn't find anything
+	return NULL;
+}
 void testador6000()
 {
 	printf("\n\n INCIALIZANDO TESTE \n\n");
