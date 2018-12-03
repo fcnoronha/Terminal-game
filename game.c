@@ -460,7 +460,7 @@ dir charToDir(char *x)
 	if (strcmp("LESTE", x) == 0)
 		return LESTE;
 
-	return NORTE; // Default
+	return NULL; // Default
 }
 FPTR buscaObj(char *objeto)
 {
