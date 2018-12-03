@@ -6,7 +6,5 @@ objetivo não for NULL (fazer chatodir retornar NULL se não se encaixa em nada)
 
 - Ver erro na função que testa quando escreve 'teste'
 
-- Escrever lista de ações possiveis
-
 - Fazer a parte que le alpha do scanner descobrir se aquilo é uma ação ou obejeto e retronar seu respectivo token
 	fazer com que a primeira coisa lida na frase sem ser uma ligação seja um verbo e a segunda ser um objeto
