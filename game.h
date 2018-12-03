@@ -39,6 +39,11 @@ FPTR buscaFun(char *verbo, char *objeto);
 dir charToDir(char *x);
 
 /*
+ retorna o objeto do tipo Elemento caso o encontre e NULL c.c.
+*/
+FPTR buscaObj(char *objeto);
+
+/*
  Ends the game
 */
 void finalizaJogo();
