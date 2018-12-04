@@ -10,7 +10,7 @@ struct tb;
 
 typedef enum {false, true} boolean;
 
-typedef enum {NORTE, LESTE, SUL, OESTE} dir;
+typedef enum {NORTE, LESTE, SUL, OESTE, NULO = -1} dir;
 
 // ------------------ HASHTABLE
 

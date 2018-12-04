@@ -4,6 +4,7 @@
 
 int yylex();
 int yyerror(char *);
+char *ver;
 
 %}
 
@@ -14,7 +15,7 @@ int yyerror(char *);
 }
 
 %token <numero> ACAO
-%token <str> OBJE
+%token <str> OBJE PRIMEIRO SEGUNDO
 
 %token INFO TEST READ EOL FIM
 
@@ -24,17 +25,33 @@ int yyerror(char *);
 
 input: 
 	  EOL		{ printf("Zzzz...\n"); }
-	| cmd 
-    | INFO {
-    	printf("Lista de ações possiveis:  PEGAR <OBJETO>, ABRIR <OBJETO>, ESCREVER, SOLTAR <OBJETO>, QUEBRAR <OBJETO>, ANDAR <DIRECAO>\n");
-    	// Escrever coisas aqui
-   	} eol // 'eol' represents the end of command
-    	
 
-    | TEST {
-    	testador6000();
-    	// Error
-    }
+  | PRIMEIRO {
+    printf("oi\n");
+         if (ver == NULL){
+          ver = $1;
+         }
+         else {
+          printf("%s - %s", ver, $1);
+         }
+
+    } eol 
+
+  | READ {printf("KNKJNKJN\n");} eol
+
+	| cmd 
+
+  | INFO {
+  	printf("Lista de ações possiveis:  \nPEGAR <OBJETO> \nABRIR <OBJETO> \nESCREVER \nSOLTAR <OBJETO> \
+  	\nQUEBRAR <OBJETO> \nANDAR <DIRECAO> \nHELP \nSAIR \nVariações podem ser aceitas ;D\n");
+  	// Escrever coisas aqui
+ 	} eol // 'eol' represents the end of command
+  	
+
+  | TEST {
+  	testador6000();
+  	// Error
+  }
 
 	| FIM  { return 0;}
 
@@ -58,6 +75,6 @@ eol: EOL {return 1;}
 %%
 
 int yyerror(char *s) {
-  puts("Não entendi...");
+  //puts("Não entendi...");
   return 0;
 }

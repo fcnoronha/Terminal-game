@@ -55,26 +55,31 @@ d[aoe]|em|n[ao]
 (pau) {
   yylval.numero = 2;
   return ACAO
-;}
+;} 
 
 (buc) {
   yylval.str = "oi";
   return OBJE
 ;}
 
+[ \t]+
+
 [[:alpha:]]+ { 
   if(estado == 0){
     printf("verbo: %s\n", yytext);
     estado++;
+    yylval.str = yytext;
   }
   else {
     printf("obj: %s\n", yytext);
     estado = 0;
+    yylval.str = yytext;
+    return SEGUNDO;
   }
 
-return READ;}
+  return PRIMEIRO
+;}
 
-[ \t]+
 [\n;] {/* ';' também termina linhas */return EOL;}
 
 

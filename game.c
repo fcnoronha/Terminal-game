@@ -460,8 +460,10 @@ dir charToDir(char *x)
 	if (strcmp("LESTE", x) == 0)
 		return LESTE;
 
-	return NULL; // Default
+	return NULO; // Default
 }
+
+/*
 FPTR buscaObj(char *objeto)
 {
 	objeto = buscaSin(dicionario, objeto);
@@ -491,6 +493,8 @@ FPTR buscaObj(char *objeto)
 	// Didn't find anything
 	return NULL;
 }
+*/
+
 void testador6000()
 {
 	printf("\n\n INCIALIZANDO TESTE \n\n");
@@ -702,16 +706,28 @@ void testador6000()
 
 int main(){
 	// Starting description
+	printf("\n************************************************************************************************\n");
 	printf("\nVocê não sabe onde está.\nDe todos os lados o único sentimento que te consome é um vazio.\
 Não há cores, odores, sabores, seus sentidos não captam nada.\nVocê percebe que essa confusão e indefinição\
  são reflexos de quem você é, pois como este lugar, você não se conhece. \nVocê está no cerne de sua mente, sua IDENTIDADE.\
- E irá começar uma jornada em busca de QUEM VOCÊ É.\n\n");
-		
-	// Initializing games components
-	inicializa();	
+ E irá começar uma jornada em busca de QUEM VOCÊ É.\n");
+	printf("\n************************************************************************************************\n");
 
-	// Running game
-	while (yyparse());
+	printf("Aperte ENTER para iniciar o jogo\n");
+
+	for (;;){
+	    char c = getchar();
+
+	    if(c == '\n' || c == 13){
+	    	// Initializing games components
+			inicializa();	
+
+			// Running game
+			while (yyparse());
+
+	        break;
+	    }
+	}
 
 	// Ending game
 	destroier();
