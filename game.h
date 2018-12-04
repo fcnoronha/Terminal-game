@@ -55,4 +55,9 @@ void finalizaJogo();
 */
 void executaComando(char*, char*);
 
+/*
+ Print everuthing in a room
+*/
+void listar();
+
 # endif

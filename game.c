@@ -35,6 +35,9 @@ TabSim *dicionario;
 // Global functions that can be perfomed by the character
 Lista *funGlobais;
 
+// Flag to keep game running
+int jogando = 1;
+
 /*
 
 		 EGO --  PRAZER	
@@ -51,7 +54,6 @@ Lista *funGlobais;
 
 void inicializa()
 {
-
 	int flag = 0;
 	EloL *f; // Auxiliar pointer to define functions
 
@@ -406,6 +408,7 @@ void destroier()
 void finalizaJogo()
 {
 	printf("Parece que as coisas estão mais claras agora\n");
+	jogando = 0;
 	destroier();
 }
 
@@ -710,6 +713,7 @@ void testador6000()
 
 void executaComando(char *verbo, char *objeto){
 
+	// Searching verb synonym
 	char *auxVerbo = buscaSin(dicionario, verbo);
 	if (auxVerbo == NULL){
 		printf("Comando %s não reconhecido!\n", verbo);
@@ -717,6 +721,7 @@ void executaComando(char *verbo, char *objeto){
 	}
 	verbo = auxVerbo;
 
+	// Seaching object synonym
 	char *auxObj = buscaSin(dicionario, objeto);
 	if (auxObj == NULL){
 		printf("Objeto/lugar %s não reconhecido!\n", objeto);
@@ -724,19 +729,28 @@ void executaComando(char *verbo, char *objeto){
 	}
 	objeto = auxObj;
 
+	// Getting function
 	FPTR doing = buscaFun(verbo, objeto);
 	if (doing == NULL){
 		printf("Não é possivel realizar esta ação!\n");
 		return;
 	}
 
+	// Getting complement to the function
 	Elemento *obj = buscaObj(objeto);
 	if (obj == NULL){
 		printf("Não existe %s aqui!\n", objeto);
 		return;
 	}
 
+	// Checking if everithing went well
 	int flag = doing(pessoa, obj);
+	if (flag == 0)
+		printf("Não é possível realizar esta ação!\n");
+}
+
+void listar(){
+	imprimeObjetos(pessoa->salaAtual);
 }
 
 int main(){
@@ -750,7 +764,7 @@ Não há cores, odores, sabores, seus sentidos não captam nada.\nVocê percebe 
 
 	printf("Aperte ENTER para iniciar o jogo\n");
 
-	for (;;){
+	while (jogando){
 	    char c = getchar();
 
 	    if(c == '\n' || c == 13){
@@ -763,6 +777,9 @@ Não há cores, odores, sabores, seus sentidos não captam nada.\nVocê percebe 
 	        break;
 	    }
 	}
+
+	printf("\nPoxa, ja vai...\n");
+	printf("\nEste jogo foi desenvolvido por Bruna Bazaluk, Felipe Noronha e Gustavo Bastos. \n");
 
 	// Ending game
 	destroier();

@@ -57,6 +57,7 @@ int andar(Personagem *p, Elemento *sala)
 		return 1; // Visited
 	}
 	else if (sala->isLugar && !(sala->ativo)){
+		printf("Não é possível visitar esta sala!\n");
 		return 2; // Can't be visited
 	}
 	return 0; // Is not room

@@ -17,7 +17,7 @@ int yyerror(char *);
 
 %token <guardado> ACAO
 
-%token INFO TEST READ EOL FIM CARALHO
+%token INFO TEST READ EOL FIM CARALHO LISTAR
 
 %defines
 
@@ -32,11 +32,15 @@ input:
 
   }
 
+  | LISTAR {
+    listar();
+  }
+
 	| cmd 
 
   | INFO {
   	printf("Lista de ações possiveis:  \nPEGAR <OBJETO> \nABRIR <OBJETO> \nESCREVER \nSOLTAR <OBJETO> \
-  	\nQUEBRAR <OBJETO> \nANDAR <DIRECAO> \nHELP \nSAIR \nVariações podem ser aceitas ;D\n");
+  	\nQUEBRAR <OBJETO> \nANDAR <DIRECAO> \nLISTAR \nHELP \nSAIR \nVariações podem ser aceitas ;D\n");
   	// Escrever coisas aqui
  	} eol // 'eol' represents the end of command
   	

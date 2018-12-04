@@ -47,6 +47,8 @@ static int mygetinput(char *buf, int size) {
 
 (testa|teste|test) {return TEST;}
 
+(listar|mostrar) {return LISTAR;}
+
 para // Ignora as conjunções
 
 [ao]|uma?

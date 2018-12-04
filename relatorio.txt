@@ -87,3 +87,8 @@ Especificações:
 	 - finalizaJogo(): Nome autoexplicativo;
 	 - buscaFun(): Uma das principais funções. Ela realiza a busca de uma função dentro das listas do jogo, seguindo a hieraquia de busca objeto > sala > geral, ou seja, a busca de uma função é realizada primeiro em um objeto e por último na lista geral de funções. Esta função trabalha com uma cadeia de char 'verbo' e outra 'objeto'. A cadeia 'objeto' é usada para buscar um objeto em uma sala, filtrando assim, a busca por uma função. De forma geral, a busca de uma função é realizada atravéz da comparação de uma tag relacionada àquela função e o sinonimo do dicionário associado ao verbo, de forma que, se um é igual ao outro, encontramos nossa função. Esta parte ficará mais clara na etapa 3 do projeto, com uso uso de interpretadores léxicos;
 	 - testador6000(): Aqui, a forma de testar as implementações foi realizada de maneira diferente da parte 1. Agora,  os testes são realizados dentro do proprio arquivo game.c, de forma que, para que se possa jogar o jogo após os testes seria necessária a seguinte ordem the funções inicializa()>testador6000()>destroier()>inicializa(). Aqui, todas as funções implementadas nesta parte são testadas, garantindo assim, sua eficácia.
+
+---------------- PARTE 3 ----------------------
+
+Na parte 3, foi implementado o uso de Bison e Flex, assim, o jogo recebe comandos da forma <VERBO> <OBJETO>, os quais possibilitam a iteração usuario-jogo. Ademais, existem comandos unicos, que possui ações especificas associadas a ele. 
+Para complementar, é fornecido um arquivo 'roteiro.txt', que possui uma lista de comandos que o usuario pode digitar para explorar todos os aspectos do jogo.
