@@ -4,20 +4,20 @@
 
 int yylex();
 int yyerror(char *);
-char *ver;
 
 %}
 
 // Declarations
 %union {
-  char *str;
-  int  numero;
+  struct {
+      char *ver;
+      char *obj;
+  } guardado;
 }
 
-%token <numero> ACAO
-%token <str> OBJE PRIMEIRO SEGUNDO
+%token <guardado> ACAO
 
-%token INFO TEST READ EOL FIM
+%token INFO TEST READ EOL FIM CARALHO
 
 %defines
 
@@ -26,18 +26,11 @@ char *ver;
 input: 
 	  EOL		{ printf("Zzzz...\n"); }
 
-  | PRIMEIRO {
-    printf("oi\n");
-         if (ver == NULL){
-          ver = $1;
-         }
-         else {
-          printf("%s - %s", ver, $1);
-         }
+  | ACAO {
 
-    } eol 
+    executaComando($1.ver, $1.obj);
 
-  | READ {printf("KNKJNKJN\n");} eol
+  }
 
 	| cmd 
 
@@ -59,15 +52,15 @@ input:
 ;
 
 cmd: 
-   ACAO OBJE {
+   //ACAO OBJE {
 			   /* Transitivo direto */
-			   printf("%d %s\n", $1, $2);
+			   //printf("%d %s\n", $1, $2);
 			   /*
 					$1 -> value of first token
 					S2 -> value of second token
 			   */
 			   //F(AcertaF($1,$2))($2->value,NULL);
-			 } eol 
+	//		 } eol 
 
 ;
 

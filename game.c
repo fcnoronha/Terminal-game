@@ -417,23 +417,42 @@ void mudaAtivo()
 		finalizaJogo();
 }
 
+dir charToDir(char *x)
+{	
+	if (strcmp("NORTE", x) == 0)
+		return NORTE;
+	if (strcmp("SUL", x) == 0)
+		return SUL;
+	if (strcmp("OESTE", x) == 0)
+		return OESTE;
+	if (strcmp("LESTE", x) == 0)
+		return LESTE;
+
+	return NULO; // Default
+}
+
 FPTR buscaFun(char *verbo, char *objeto)
 {
-	verbo = buscaSin(dicionario, verbo);
-	objeto = buscaSin(dicionario, objeto);
+	//verbo = buscaSin(dicionario, verbo);
+	//objeto = buscaSin(dicionario, objeto);
 
-	if (verbo == NULL)
+	if (verbo == NULL || objeto == NULL)
 		return NULL;
 
-	// View in the objects of the room
-	EloL *bus = buscaElol(pessoa->salaAtual->conteudo, objeto);
-	if (bus != NULL){
-		bus = buscaElol(bus->inst.obj->funEspecificas, verbo);
+	dir flag = charToDir(objeto);
+
+	EloL *bus = NULL;
+
+	if (flag == NULO){
+		// View in the objects of the room
+		bus = buscaElol(pessoa->salaAtual->conteudo, objeto);
+		if (bus != NULL){
+			bus = buscaElol(bus->inst.obj->funEspecificas, verbo);
+		}
 	}
 
 	if (bus != NULL)
 		return bus->inst.fun;
-
 
 	// View in the functions of the room
 	bus = buscaElol(pessoa->salaAtual->funEspecificas, verbo);
@@ -449,51 +468,36 @@ FPTR buscaFun(char *verbo, char *objeto)
 	return NULL;
 }
 
-dir charToDir(char *x)
-{	
-	if (strcmp("NORTE", x) == 0)
-		return NORTE;
-	if (strcmp("SUL", x) == 0)
-		return SUL;
-	if (strcmp("OESTE", x) == 0)
-		return OESTE;
-	if (strcmp("LESTE", x) == 0)
-		return LESTE;
-
-	return NULO; // Default
-}
-
-/*
-FPTR buscaObj(char *objeto)
+Elemento *buscaObj(char *objeto)
 {
-	objeto = buscaSin(dicionario, objeto);
-	Elemento objNaMochila;
-	dir ehDirecao;
+	dir direcao;
 
 	if (objeto == NULL)
 		return NULL;
 
-	ehDirecao=charToDir(objeto);
+	direcao = charToDir(objeto);
 
-	if (ehDirecao != NULL) return ehDirecao;
+	if (direcao != NULO) 
+		return pessoa->salaAtual->atrida.saidas[direcao];
 
+	EloL *aux = NULL;
 
-	objNaMochila = buscaL(p->mochila, objeto); // se o objeto estiver na mochila
+	// Searching in the bag
+	aux = buscaElol(pessoa->mochila, objeto); 
 
-	if (objNaMochila != NULL) return objNaMochila;
+	if (aux != NULL) 
+		return aux->inst.obj;
 
-	// se o objeto estiver na sala
-	EloL *bus = buscaElol(pessoa->salaAtual->conteudo, objeto);
-	while (bus != NULL && strcmp(bus->info,objeto)==0){
-		EloL *bus = buscaElol(pessoa->salaAtual->conteudo, objeto);
-	}
+	// Searching in the room
+	aux = buscaElol(pessoa->salaAtual->conteudo, objeto); 
 
-	if (bus == NULL) return NULL;
+	if (aux != NULL) 
+		return aux->inst.obj;
 
 	// Didn't find anything
 	return NULL;
 }
-*/
+
 
 void testador6000()
 {
@@ -702,6 +706,37 @@ void testador6000()
 	inicializa();
 
 	printf("\n\n TESTE FINALIZADO \n\n");
+}
+
+void executaComando(char *verbo, char *objeto){
+
+	char *auxVerbo = buscaSin(dicionario, verbo);
+	if (auxVerbo == NULL){
+		printf("Comando %s não reconhecido!\n", verbo);
+		return;
+	}
+	verbo = auxVerbo;
+
+	char *auxObj = buscaSin(dicionario, objeto);
+	if (auxObj == NULL){
+		printf("Objeto/lugar %s não reconhecido!\n", objeto);
+		return;
+	}
+	objeto = auxObj;
+
+	FPTR doing = buscaFun(verbo, objeto);
+	if (doing == NULL){
+		printf("Não é possivel realizar esta ação!\n");
+		return;
+	}
+
+	Elemento *obj = buscaObj(objeto);
+	if (obj == NULL){
+		printf("Não existe %s aqui!\n", objeto);
+		return;
+	}
+
+	int flag = doing(pessoa, obj);
 }
 
 int main(){

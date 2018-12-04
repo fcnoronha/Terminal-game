@@ -9,6 +9,7 @@
 #define YY_INPUT(buf,result,max_size) result = mygetinput(buf, max_size);
 
 int estado = 0;
+char *aux;
 
 /* Function to substitute input */
 static int mygetinput(char *buf, int size) {
@@ -52,32 +53,23 @@ para // Ignora as conjunções
 
 d[aoe]|em|n[ao]
 
-(pau) {
-  yylval.numero = 2;
-  return ACAO
-;} 
-
-(buc) {
-  yylval.str = "oi";
-  return OBJE
-;}
-
 [ \t]+
 
 [[:alpha:]]+ { 
   if(estado == 0){
-    printf("verbo: %s\n", yytext);
+    // printf("verbo: %s\n", yytext);
     estado++;
-    yylval.str = yytext;
+    aux = malloc(30 * sizeof(char));
+    strcpy(aux, yytext);
   }
   else {
-    printf("obj: %s\n", yytext);
+    // printf("obj: %s\n", yytext);
     estado = 0;
-    yylval.str = yytext;
-    return SEGUNDO;
+    yylval.guardado.ver = aux;
+    yylval.guardado.obj = malloc(30 * sizeof(char));
+    strcpy(yylval.guardado.obj, yytext);
+    return ACAO;
   }
-
-  return PRIMEIRO
 ;}
 
 [\n;] {/* ';' também termina linhas */return EOL;}

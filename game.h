@@ -39,13 +39,20 @@ FPTR buscaFun(char *verbo, char *objeto);
 dir charToDir(char *x);
 
 /*
- retorna o objeto do tipo Elemento caso o encontre e NULL c.c.
+ Search all elements with the character and in the room. Can also
+ return a location, if the input string is a direction. Return NULL
+ if nothing is find.
 */
-FPTR buscaObj(char *objeto);
+Elemento *buscaObj(char *objeto);
 
 /*
  Ends the game
 */
 void finalizaJogo();
+
+/*
+ Receive words and execute commans according to it
+*/
+void executaComando(char*, char*);
 
 # endif
