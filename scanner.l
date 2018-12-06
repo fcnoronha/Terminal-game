@@ -8,7 +8,7 @@
 
 #define YY_INPUT(buf,result,max_size) result = mygetinput(buf, max_size);
 
-int estado = 0;
+int estado = 0; // If is verb or not
 char *aux;
 
 /* Function to substitute input */
@@ -45,8 +45,6 @@ static int mygetinput(char *buf, int size) {
 
 (help|ajuda|info) {return INFO;} 
 
-(testa|teste|test) {return TEST;}
-
 (listar|mostrar) {return LISTAR;}
 
 para // Ignora as conjunções
@@ -59,13 +57,13 @@ d[aoe]|em|n[ao]
 
 [[:alpha:]]+ { 
   if(estado == 0){
-    // printf("verbo: %s\n", yytext);
+    // If it is a veb
     estado++;
     aux = malloc(30 * sizeof(char));
     strcpy(aux, yytext);
   }
   else {
-    // printf("obj: %s\n", yytext);
+    // If it is an object
     estado = 0;
     yylval.guardado.ver = aux;
     yylval.guardado.obj = malloc(30 * sizeof(char));
