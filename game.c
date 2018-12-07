@@ -40,7 +40,7 @@ int jogando = 1;
 
 /*
 
-		 EGO --  PRAZER	
+		 EGO --  PRAZER
 					^
 					|
 					v
@@ -73,7 +73,7 @@ void inicializa()
 	// INITIALIZING OBJECTS
 
 	// 'Banquete' object
-	banquete->nome = "Um banquete.";
+	banquete->nome = "banquete";
 	banquete->curta = "Uma mesa imensa com milhares de pratos de comida diferentes e maravilhosos. Desde doces, salgados ou agridoces.";
 	banquete->ativo = true;
 	banquete->funEspecificas = criaL();
@@ -89,7 +89,7 @@ void inicializa()
 	banquete->isCoisa = true;
 
 	// 'livro' object
-	livro->nome = "Um livro.";
+	livro->nome = "livro";
 	livro->curta = "Um livro enorme, mas não tanto a ponto de exceder o tamanho de um ser humano, com capa azul está diante de você.";
 	livro->ativo = true;
 	livro->desc = NULL;
@@ -112,7 +112,7 @@ void inicializa()
 	livro->isCoisa = true;
 
 	// 'espinhos' object
-	espinhos->nome = "Uns espinhos.";
+	espinhos->nome = "espinhos";
 	espinhos->curta = "Você sente algo pontudo e perfurante em suas mãos, como se fosse uma bola de agulhas. Isso te machuca.";
 	espinhos->ativo = true;
 	espinhos->funEspecificas = criaL();
@@ -134,7 +134,7 @@ void inicializa()
 	espinhos->isCoisa = true;
 
 	// 'album' object
-	album->nome = "Um album.";
+	album->nome = "album";
 	album->curta = "É o maior álbum de fotografias que você já viu.";
 	album->ativo = true;
 	album->desc = NULL;
@@ -177,7 +177,7 @@ void inicializa()
 	identidade->atrida.saidas[SUL] = NULL;
 	identidade->atrida.saidas[OESTE] = memoria;
 
-	
+
 	// 'prazer' room
 	prazer->nome = "Prazer";
 	prazer->curta = "Tudo é vermelho.";
@@ -193,8 +193,8 @@ void inicializa()
 	b->prox = NULL;
 	flag += insereElol(prazer->conteudo, b);
 
-	// fun *açoes 
-	// *animaçao 
+	// fun *açoes
+	// *animaçao
 	prazer->isLugar = true;
 	prazer->isCoisa = false;
 	prazer->atrida.saidas = malloc(4 * sizeof(Elemento*));
@@ -203,7 +203,7 @@ void inicializa()
 	prazer->atrida.saidas[SUL] = identidade;
 	prazer->atrida.saidas[OESTE] = ego;
 
-	
+
 	// 'racional' room
 	racional->nome = "Racional";
 	racional->curta = "Azul é tudo que seus olhos conseguem captar.";
@@ -219,8 +219,8 @@ void inicializa()
 	l->prox = NULL;
 	flag += insereElol(racional->conteudo, l);
 
-	// fun *açoes 
-	// *animaçao 
+	// fun *açoes
+	// *animaçao
 	racional->isLugar = true;
 	racional->isCoisa = false;
 	// 4 directions and their respective rooms
@@ -229,10 +229,10 @@ void inicializa()
 	racional->atrida.saidas[LESTE] = NULL;
 	racional->atrida.saidas[SUL] = medo;
 	racional->atrida.saidas[OESTE] = identidade;
-	
+
 
 	// 'memoria' room
-	memoria->nome = "Memoria";
+	memoria->nome = "Memória";
 	memoria->curta = "Verde é tudo que você consegue ver.";
 	memoria->longa = "Você vê uma luz verde iluminando tudo ao seu redor.";
 	memoria->ativo = true;
@@ -278,7 +278,7 @@ void inicializa()
 	ego->atrida.saidas[LESTE] = prazer;
 	ego->atrida.saidas[SUL] = NULL;
 	ego->atrida.saidas[OESTE] = NULL;
-	
+
 
 	// 'medo' room
 	medo->nome = "Medo";
@@ -317,20 +317,46 @@ void inicializa()
 	dicionario = criaS(100);
 	// With this, if you search "agarrar" in the dictionary, the returned
 	// value will be "pegar".
-	flag += insereSin(dicionario, "agarrar", "pegar");
+	// Actions:
 	flag += insereSin(dicionario, "pegar", "pegar");
+	flag += insereSin(dicionario, "agarrar", "pegar");
+	flag += insereSin(dicionario, "catar", "pegar");
+	flag += insereSin(dicionario, "embolsar", "pegar");
+	flag += insereSin(dicionario, "roubar", "pegar");
+	flag += insereSin(dicionario, "apanhar", "pegar");
+
 	flag += insereSin(dicionario, "andar", "andar");
 	flag += insereSin(dicionario, "vai", "andar");
+	flag += insereSin(dicionario, "ir", "andar");
 	flag += insereSin(dicionario, "move", "andar");
+
 	flag += insereSin(dicionario, "soltar", "soltar");
 	flag += insereSin(dicionario, "deixar", "soltar");
+	flag += insereSin(dicionario, "largar", "soltar");
+	flag += insereSin(dicionario, "abandonar", "soltar");
+	flag += insereSin(dicionario, "tirar", "soltar");
+
 	flag += insereSin(dicionario, "escrever", "escrever");
+	flag += insereSin(dicionario, "anotar", "escrever");
+	flag += insereSin(dicionario, "registrar", "escrever");
+	flag += insereSin(dicionario, "rabiscar", "escrever");
+
 	flag += insereSin(dicionario, "quebrar", "quebrar");
-	flag += insereSin(dicionario, "destroi", "quebrar");
+	flag += insereSin(dicionario, "destruir", "quebrar");
+	flag += insereSin(dicionario, "obliterar", "quebrar");
+	flag += insereSin(dicionario, "fragmentar", "quebrar");
+	flag += insereSin(dicionario, "bater", "quebrar");
+	flag += insereSin(dicionario, "socar", "quebrar");
+
 	flag += insereSin(dicionario, "abrir", "abrir");
 	flag += insereSin(dicionario, "ler", "abrir");
+	flag += insereSin(dicionario, "ver", "abrir");
+	flag += insereSin(dicionario, "examinar", "abrir");
+
+
 	flag += insereSin(dicionario, "info", "info");
 
+	// Objects:
 	flag += insereSin(dicionario, "banquete", "banquete");
 	flag += insereSin(dicionario, "livro", "livro");
 	flag += insereSin(dicionario, "espinhos", "espinhos");
@@ -343,8 +369,6 @@ void inicializa()
 	flag += insereSin(dicionario, "tras", "SUL");
 	flag += insereSin(dicionario, "direita", "LESTE");
 	flag += insereSin(dicionario, "esquerda", "OESTE");
-	
-	// More synonyms must be defined...
 
 
 	// DEFINING GLOBAL FUNCTIONS
@@ -365,17 +389,17 @@ void destroier()
 	free(identidade->atrida.saidas);
 	destroiL(identidade->conteudo);
 	destroiL(identidade->funEspecificas);
-	free(identidade); 
+	free(identidade);
 	free(prazer->atrida.saidas);
 	destroiL(prazer->conteudo);
 	destroiL(prazer->funEspecificas);
 	free(prazer);
-	free(racional->atrida.saidas); 
+	free(racional->atrida.saidas);
 	destroiL(racional->conteudo);
 	destroiL(racional->funEspecificas);
 	free(racional);
 	free(memoria->atrida.saidas);
-	destroiL(memoria->conteudo); 
+	destroiL(memoria->conteudo);
 	destroiL(memoria->funEspecificas);
 	free(memoria);
 	free(medo->atrida.saidas);
@@ -421,7 +445,7 @@ void mudaAtivo()
 }
 
 dir charToDir(char *x)
-{	
+{
 	if (strcmp("NORTE", x) == 0)
 		return NORTE;
 	if (strcmp("SUL", x) == 0)
@@ -480,21 +504,21 @@ Elemento *buscaObj(char *objeto)
 
 	direcao = charToDir(objeto);
 
-	if (direcao != NULO) 
+	if (direcao != NULO)
 		return pessoa->salaAtual->atrida.saidas[direcao];
 
 	EloL *aux = NULL;
 
 	// Searching in the bag
-	aux = buscaElol(pessoa->mochila, objeto); 
+	aux = buscaElol(pessoa->mochila, objeto);
 
-	if (aux != NULL) 
+	if (aux != NULL)
 		return aux->inst.obj;
 
 	// Searching in the room
-	aux = buscaElol(pessoa->salaAtual->conteudo, objeto); 
+	aux = buscaElol(pessoa->salaAtual->conteudo, objeto);
 
-	if (aux != NULL) 
+	if (aux != NULL)
 		return aux->inst.obj;
 
 	// Didn't find anything
@@ -535,7 +559,7 @@ void testador6000()
 
 
 	printf("\n Ação: %d\n", cont++);
-	
+
 	direcao = charToDir(buscaSin(dicionario, "frente"));
 	flag = doing(pessoa, pessoa->salaAtual->atrida.saidas[direcao]);
 	if (flag == 1) printf("Mudei de sala\n");
@@ -587,7 +611,7 @@ void testador6000()
 
  	doing = buscaFun("abrir", "livro");
 	if (doing == NULL) printf("Não achei\n");
-	
+
 	flag = doing(pessoa, livro);
 	// Opening the 'livro'
 
@@ -769,7 +793,7 @@ Não há cores, odores, sabores, seus sentidos não captam nada.\nVocê percebe 
 
 	    if(c == '\n' || c == 13){
 	    	// Initializing games components
-			inicializa();	
+			inicializa();
 
 			// Running game
 			while (yyparse());
@@ -783,6 +807,6 @@ Não há cores, odores, sabores, seus sentidos não captam nada.\nVocê percebe 
 
 	// Ending game
 	destroier();
-	return 0; 
+	return 0;
 
 }

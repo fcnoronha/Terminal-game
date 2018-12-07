@@ -1,0 +1,11 @@
+Este é o roteiro com todas as ações possíveis do jogo, destacadas aqui em letras maiúsculas.
+
+Você começa numa sala sem luz, chamada Identidade, e dentro dela pode apenas ANDAR para o norte, leste e oeste.
+
+Ao norte da Identidade está a sala Prazer, que possui um objeto chamado banquete. Você pode apenas PEGAR ele. A sala possui também uma saída para o oeste, trancada. (destrancada quando?)
+
+A leste da Identidade está a sala Racional, com um objeto livro dentro e uma saída inicialmente trancada ao sul. Você pode LER e ESCREVER no livro.
+
+A oeste da Identidade está a sala Memória com um objeto chamado album, que você pode ABRIR e PEGAR. Também possui uma saída inicialmente trancada ao sul, que é entrada para a mesma sala ao sul da Racional.
+
+Depois de interagir com todos os objetos, a passagem ao sul das salas Memória e Racional se destranca, e é possível acessar a sala Medo. Dentro dela tem apenas um objeto chamado espinho, com o qual é possível QUEBRAR e SOLTAR. Essa sala só possui saída ao norte, que dá na sala Identidade, e termina o jogo.
