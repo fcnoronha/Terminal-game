@@ -1,4 +1,3 @@
-PROJETO TECPROG
 
 Felipe Castro de Noronha - 10737032
 Bruna Bazaluk M Videira - 9797002
@@ -93,3 +92,5 @@ Especificações:
 
 Na parte 3, foi implementado o uso de Bison e Flex, assim, o jogo recebe comandos da forma <VERBO> <OBJETO>, os quais possibilitam a interação usuário-jogo. Além disso, existem comandos únicos, que possui ações especificas associadas a ele.
 Para complementar, é fornecido um arquivo 'roteiro.txt', que possui uma lista de comandos que o usuário pode digitar para explorar todos os aspectos do jogo.
+
+Para rodar o jogo, basta digitar 'make game && ./game'.

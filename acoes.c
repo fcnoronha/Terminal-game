@@ -20,9 +20,12 @@ void imprimeObjetos(Elemento *sala)
 
 	int t = sala->conteudo->tamanho;
 
-	if (t == 0) return;
+	if (t == 0) {
+		printf("Não tem nenhum objeto aqui.\n");
+		return;
+	}
 
-	if (t > 0) printf("Aqui, temos os seguintes objetos: \n");
+	printf("Aqui, temos os seguintes objetos: \n");
 	for (EloL *i = sala->conteudo->Lista; i != NULL; i = i->prox)
 	{
 		printf("%s\n", i->inst.obj->nome);

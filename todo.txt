@@ -1,5 +1,0 @@
-- Complementar relatorio.
-
-- Criar roteiro.txt
-
-- Complementar strings e comunicação com usuario
